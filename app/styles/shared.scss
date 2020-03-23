@@ -1,0 +1,25 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $normal;
+}
+
+#main-container{
+  overflow-y: hidden;
+  padding-top: 73px;
+  @media(min-width: $screen-sm-min){
+    padding-top: 111px;
+  }
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (orientation : portrait) {
+    padding-top: 124px;
+  }
+}
+
+.view{
+  @media(min-width: $screen-sm-min){
+    margin-top: -0.8rem;
+  }
+}

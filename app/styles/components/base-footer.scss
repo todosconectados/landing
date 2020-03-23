@@ -1,0 +1,104 @@
+.base-footer{
+  @include bg-color($brand-primary);
+  $p: 1.0rem;
+  padding-top: $p;
+  padding-bottom: $p;
+  color: $white;
+  text-align: center;
+  z-index: 9998;
+  width: 100%;
+  @media (min-width: $screen-sm-min) {
+    text-align: left;
+  }
+  .footer-column{
+    border-bottom: 1px solid darken($brand-primary, 10%);
+    padding-bottom: 3.0rem;
+    text-align: center;
+    &.last{
+      border-bottom: 0 none;
+    }
+    @media (min-width: $screen-sm-min) {
+      border-bottom: 0 none;
+    }
+    h1{
+      padding-bottom: 0;
+      font-size: 1.6rem;
+      font-weight: $bold;
+      @media (min-width: $screen-sm-min) {
+        font-size: 1.6rem;
+        font-weight: $bold;
+      }
+    }
+    h2{
+      font-size: 1.6rem;
+      font-weight: $semi-bold;
+      @media (min-width: $screen-sm-min) {
+        font-size: 1.2rem;
+        font-weight: $bold;
+        margin-top: 1.0rem;
+      }
+    }
+    @include link('a'){
+      color: $white;
+    }
+    .address-column{
+      padding-left: 0px;
+    }
+    $p: 1.0rem;
+    a, p{
+      display: block;
+      font-size: 1.1rem;
+      padding-top: $p;
+      padding-bottom: 0;
+      $p: 0.5rem;
+      @media (min-width: $screen-sm-min) {
+        font-size: 1.0rem;
+        padding-top: $p;
+        padding-bottom: $p;
+      }
+    }
+    p{
+      &.smart{
+        font-size:1.6rem;
+        font-weight: $bold;
+        padding: 0;
+        margin:0;
+      }
+      &.product{
+        padding-bottom: 0;
+        margin-bottom: 0.5rem;;
+        @media(min-width: $screen-sm-min){
+          span{
+            display: block;
+          }
+        }
+        @media(min-width: $screen-md-min){
+            span{
+              display: inline;
+            }
+          }
+      }
+      a{
+        display: inline;
+      }
+      &.smart{
+        font-size: 1.6rem;
+        font-weight: $bold;
+      }
+      &.product{
+        margin-bottom: 0;
+        p span{
+          display:block;
+        }
+      }
+    }
+    $m: 1.2rem;
+    @include link('a.social'){
+      font-size: 2.0rem;
+      text-decoration: none;
+      margin-right: $m;
+      margin-left: $m;
+      display: inline;
+    }
+  }
+}

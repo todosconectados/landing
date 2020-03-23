@@ -1,0 +1,158 @@
+.navbar{
+  box-shadow: 1px 1px 10px rgba(0,0,0,.30);
+  $p: 10px;
+  $bg: #F4F4F4;
+  $text: 1.2rem;
+  font-size: $text;
+  .info{
+    padding-top: .3rem;
+    padding-bottom: 1rem;
+    @include bg-color($bg);
+    border-bottom: 1px solid darken($bg, 2%);
+    $m: 1.4rem;
+    .navbar-text{
+      margin-top: $m;
+      margin-bottom: $m;
+      font-size: 1.0rem;
+    }
+  }
+  .logo{
+    padding-left: 1rem;
+    @media(min-width: $screen-sm-min){
+    padding-left: 4rem;
+    }
+  }
+  .navbar-header-button{
+    border-radius: 0.3rem;
+    padding: .5rem 1.5rem;
+    padding-top: 0.3rem;
+    margin-left: 1rem;
+    margin-top: .4rem;
+    &.button-sells{
+      background-color: $brand-primary;
+      display: inline-flex;
+      a{
+        color: white;
+        font-weight: $bold;
+        text-decoration: none;
+      }
+    }
+    &.button-support{
+      background-color: $brand-secondary;
+      display: inline-flex;
+      a{
+        color: white;
+        font-weight: $bold;
+        text-decoration: none;
+      }
+    }
+    a{
+      font-size: 1.3rem;
+    }
+    .icon{
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+      font-size: 1.1rem;
+    }
+  }
+  .support{
+    color: $title-color;
+    font-weight: $bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin-left: 1.5rem;
+  }
+  a.navbar-brand{
+    padding-top: 0.6rem;
+    @media(min-width: $screen-sm-min){
+      margin-top: 0;
+      padding-bottom: 0;
+      padding-top: 0.95rem;
+    }
+    color: $brand-primary;
+    .secondary{
+      color: $gray-dark;
+      font-weight: $semi-bold;
+    }
+    img{
+      width: 7.0rem;
+    }
+  }
+  .navbar-right{
+    a{
+      color: $white;
+    }
+  }
+  .info-actions{
+    $p: 0.3rem;
+    .btn{
+      margin-top: 0.6rem;
+      padding-top: $p;
+      padding-bottom: $p;
+      @media (max-width: $screen-sm-min) {
+        margin-top: 0rem;
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+  @include link('a.btn-login'){
+    padding-top: $p;
+    padding-bottom: $p;
+    color: $white;
+    font-weight: $semi-bold;
+  }
+  .navbar-nav{
+    > li > a {
+      padding-bottom: 15px;
+      .span{
+        padding-bottom: 5px;
+        padding-left: 2.0rem;
+      }
+    }
+    li{
+      &.dropdown{
+        margin-bottom: 0;
+        @media(min-width: $screen-sm-min){
+          margin-bottom: 1.0rem;
+        }
+      }
+      @include link('a'){
+        color: $brand-primary;
+        font-size:$text;
+      }
+      .dropdown-menu{
+        > li {
+          > a{
+            padding-top: 1.0rem;
+            padding-bottom:1.0rem;
+          }
+        }
+      }
+      a:hover{
+        color: $brand-secondary;
+      }
+      a.btn-login{
+        color: $white;
+        &:hover, &:focus{
+          color: $white;
+          border: 1px solid $brand-primary;
+          background-color: darken($brand-primary, 10%);
+        }
+      }
+    }
+  }
+  @media (min-width: $screen-sm-min) {
+    .btn-login{
+      margin-top: 1rem;
+    }
+  }
+  @media (max-width: $screen-sm-min) {
+    .navbar-header{
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+}
+.last-nav {
+  margin-top: 6rem;
+}

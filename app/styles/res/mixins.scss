@@ -1,0 +1,135 @@
+/** css3 */
+@mixin border-radius($top-left, $top-right, $bottom-right, $bottom-left){
+	@include browsers('border-radius', #{ $top-left $top-right $bottom-right $bottom-left });
+}
+
+@mixin box-shadow($args){
+	@include browsers('box-shadow', $args);
+}
+
+@mixin text-shadow($top, $left, $blur, $color){
+	@include browsers('text-shadow', #{ $top $left $blur $color });
+}
+
+@mixin background-gradient($from, $to){
+	background-color: $to;
+	background-image: -moz-linear-gradient(top,
+							$from,
+							$to);
+	background-image: -webkit-gradient(linear,left top,left bottom,
+		color-stop(0, 	$from),
+		color-stop(1, 		$to));
+	background-image: linear-gradient($from, $to);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from}', EndColorStr='#{$to}')";
+}
+
+@mixin browsers($name, $value){
+	-webkit-#{$name}: $value;
+	-moz-#{$name}: $value;
+	-o-#{$name}: $value;
+	-ms-#{$name}: $value;
+	#{$name}: $value;
+}
+
+/*
+
+  transition: width 2s, height 2s, transform 2s;
+
+  -webkit-transition: width 1s linear 2s;
+  transition: width 1s linear 2s;
+*/
+@mixin browser-transition($value){
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin parallax-bg($src){
+	$url: asset_path($src);
+	background-image: url('#{$url}');
+	background-color: transparent;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	background-position:50% 50%9 !important;
+	background-attachment: fixed;
+	background-clip: border-box;
+	background-origin: padding-box;
+	background-size: cover;
+}
+
+@mixin transition-property($value, $time){
+	-webkit-transition-property: $value;
+	-webkit-transition-duration: $time;
+	-moz-transition-property: $value;
+	-moz-transition-duration: $time;
+	-o-transition-property: $value;
+	-o-transition-duration: $time;
+	transition-property: $value;
+	transition-duration: $value;
+}
+
+@mixin transition-all($value, $time, $function, $delay){
+	-webkit-transition-property: $value;
+	-webkit-transition-duration: $time;
+  -webkit-transition-timing-function: $function;
+  -webkit-transition-delay: $delay;
+	-moz-transition-property: $value;
+	-moz-transition-duration: $time;
+  -moz-transition-timing-function: $function;
+  -moz-transition-delay: $delay;
+	-o-transition-property: $value;
+	-o-transition-duration: $time;
+  -o-transition-timing-function: $function;
+  -o-transition-delay: $delay;
+	transition-property: $value;
+	transition-duration: $value;
+}
+
+@mixin no-radius(){
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+}
+
+@mixin ellipsis(){
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/** links */
+@mixin link($name){
+	#{$name}, #{$name}:link, #{$name}:hover, #{$name}:active, #{$name}:visited {
+		@content;
+	}
+}
+
+@mixin retina(){
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx){
+		@content;
+	}
+}
+
+/** backgrounds */
+@mixin bg-color($color){
+	background: none repeat scroll 0 0 $color;
+}
+
+@mixin img-link{
+	border: 0 none;
+	outline: none;
+	text-decoration: none;
+}
+
+/** ie */
+@mixin ie-transparent-background{
+	behavior: url(/ie/png/iepngfix.htc);
+}
