@@ -10,6 +10,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  // funcionality
+  this.route('sign-up', { path: '/registro' });
+  this.route('activation', { path: '/activacion' });
+  this.route('validation', { path: '/validacion' });
+  this.route('thank-you', { path: '/gracias' });
   // default 404 handling
   this.route('not-found', { path: '*path' });
 });
