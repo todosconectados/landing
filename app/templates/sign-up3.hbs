@@ -27,26 +27,33 @@
       <div class="line-gray"></div>
       <h2>Datos del titular de la cuenta.<br><br></h2>
     </div>
-  <div class="contact-form">
-    <div class="container signup-form single">
-      <div class="fieldset padding-fieldset">
-        <div class="row">
-            <div class="col-sm-12 form-group">
-      <input type="text" name="name" id="name" required="required" class="form" placeholder="Nombre*" />
-      <input type="text" name="lastname" id="lastname" required="required" class="form" placeholder="Apellidos*" />
-      </div>
-          </div>
-        <div class="row">
-              <div class="col-sm-12 form-group">
-      <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Correo Electrónico*" />
-      <input type="text" name="phone" id="phone" required="required" class="form" placeholder="Teléfono*" />
-        </div>
-        </div>
-  </div>
-  </div>
-  <div class="relative fullwidth col-xs-12">
-      <button type="submit" id="submit" name="submit" class="form-btn semibold">Siguiente</button>
-      </div>
+  <div class="row-body">
+  <form action="#">
+    <ul>
+      <li>
+          <p class="left">
+            <label for="first_name">Nombres</label>
+            <input type="text" name="Nombre*" placeholder="Diego" />
+          </p>
+            <p class="pull-right">
+            <label for="last_name">last name</label>
+            <input type="text" name="Apellidos" placeholder="Amieva" />
+          </p>
+        </li>
+        <li>
+         <p>
+           <label for="email">email <span class="req">*</span></label>
+           <input type="email" name="Correo electrónico" placeholder="diego@ejemplo.com" />
+         </p>
+         <p class="pull-right">
+           <input type="text" name="Teléfono" placeholder="5533001122" />
+         </p>
+       </li>
+         <li>
+            <input class="btn btn-submit" type="submit" value="Enviar" />
+         </li>
+    </ul>
+    </form>
 </div>
 </div>
 {{/base-layout}}
