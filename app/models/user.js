@@ -4,8 +4,54 @@
  */
 import Ember from 'ember';
 import DS from 'ember-data';
+import { validator, buildValidations} from 'ember-cp-validations';
 
-export default DS.Model.extend({
+const Validations = buildValidations({
+  name: [
+    validator('presence', {
+      presence: true,
+    })
+  ],
+  businessName: [
+    validator('presence', {
+      presence: true,
+    })
+  ],
+  email: [
+    validator('presence', {
+      presence: true
+    }),
+    validator('format', {
+      type: 'email',
+      allowNonTld: true
+    })
+  ],
+  phone: [
+    validator('presence', {
+      presence: true
+    }),
+    validator('length', {
+      is: 10,
+      message: 'Escribe tu número en 10 dígitos',
+    }),
+    validator('number', {
+      allowString: true,
+      integer: true,
+    }),
+  ],
+  coverLetter: [
+    validator('presence', {
+      presence: true,
+    })
+  ],
+  privacyAcceptance: [
+    validator('presence', {
+      presence: true
+    })
+  ]
+});
+
+export default DS.Model.extend(Validations,{
   /**
    * Backend Attributes
    */
