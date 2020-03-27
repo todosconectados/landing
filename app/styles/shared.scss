@@ -139,15 +139,24 @@ body{
         max-width: 40rem;
         margin: 0 auto;
       }
-      @media(min-width: $screen-sm-min){
-        margin: 0 auto;
-        padding-top: 4rem;
-        padding-bottom: 0rem;
+      .img-responsive{
+      max-width: 30rem;
+      display: block;
+      margin: 0 auto;
+      @media (min-width: 370px){
+        max-width: 35rem;
       }
-      @media(min-width: $screen-md-min){
-        padding-top: 3rem;
-        padding-bottom: 0rem;
+      @media (min-width: 410px){
+        max-width: 40rem;
       }
+      @media (min-width: $screen-sm-min){
+        max-width: 32rem;
+      }
+      img{
+      width: 100%;
+      margin: 0 auto;
+      }
+    }
     }
   }
   .high-icon{
@@ -379,7 +388,7 @@ body{
 
  .label-input100 {
    font-size: 14px;
-   color: #555555;
+   color: #666666;
    line-height: 1.5;
  }
 
