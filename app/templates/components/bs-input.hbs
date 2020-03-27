@@ -1,0 +1,29 @@
+<div class="form-group {{errorCls}}">
+  {{#if label}}
+    <label class="control-label">{{label}}</label>
+  {{/if}}
+  {{#if tooltip}}
+    <a class="legend-info">
+      {{fa-icon 'question-circle'}}
+      {{bs-tooltip title=tooltip}}
+    </a>
+  {{/if}}
+  <div class="{{inputCls}}">
+    {{#if icon}}
+      <div class="input-group-addon">
+        {{fa-icon icon}}
+      </div>
+    {{/if}}
+    {{#if addon}}
+      <div class="input-group-addon">
+        {{addon}}
+      </div>
+    {{/if}}
+    {{input type=controlType value=value placeholder=placeholder class='form-control' name=property disabled=disabled}}
+  </div>
+  {{#if showErrorMessage}}
+    <div class="help-block with-errors">
+      {{v-get model property 'message'}}
+    </div>
+  {{/if}}
+</div>

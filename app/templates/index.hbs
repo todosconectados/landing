@@ -197,6 +197,8 @@
   </div>
   </div>
 
+
+
   <div class="row">
     <div class="col-sm-12">
       <h4 class="legend">Hola, soy un tooltip
@@ -205,9 +207,64 @@
           {{fa-icon "question-circle"}}
         </a>
       </h4>
-        Hola, soy un <a onclick={{action  'termsAndConditionsClicked'}} href="#">dialog</a>.
+      Hola, soy un <a onclick={{action  'termsAndConditionsClicked'}} href="#">dialog</a>.
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
+          <div class="fieldset">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                {{bs-input model=jobApplication controlType="text" label="Nombre*"
+                  placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="col-sm-6 form-group">
+                {{bs-input model=jobApplication controlType="text" label="Apellidos*"
+                  placeholder="López" property="lastName" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-sm-6 form-group">
+                {{bs-input model=jobApplication controlType="email" label="Correo Electrónico*"
+                  placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="col-sm-6 form-group">
+                {{bs-input model=jobApplication controlType="telephone" label="Teléfono*"
+                  placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="clearfix"></div>
+              <div class="clearfix"></div>
+              <div class="col-sm-12 form-group">
+                {{bs-textarea model=jobApplication controlType="text" label="Acerca de Ti*"
+                  property="coverLetter" formIsSubmitted=formIsSubmitted}}
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-sm-12 form-group legal">
+            {{g-recaptcha onSuccess=(action "onCaptchaResolved")
+              hl="es"
+              onExpired=(action 'onCaptchaExpired')
+              ref=(mut gRecaptcha)
+            }}
+          </div>
+          <div class="col-sm-12 form-group legal">
+            <!-- {{#bs-checkbox model=jobApplication property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
+              Acepto el <a href="#" onclick={{action 'privacyPolicyClicked'}}>Aviso de Privacidad.</a>
+            {{/bs-checkbox}} -->
+          </div>
+          <div class="clearfix"></div>
+          <div class="actions">
+            {{bs-button class=submitBtnCls defaultText="Siguiente" type="primary" buttonType="submit"}}
+            <div class="clearfix"></div>
+          </div>
+        {{/bs-form}}
       </div>
     </div>
+
+  </div>
+
+
 
 {{/base-layout}}
 

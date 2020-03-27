@@ -1,0 +1,11 @@
+<div class="form-group {{errorCls}}">
+  {{#if label}}
+  <label class="control-label">{{label}}</label>
+  {{/if}}
+  {{textarea type=controlType value=value placeholder=placeholder class='form-control' name=property disabled=disabled}}
+  {{#if showErrorMessage}}
+    <div class="help-block with-errors">
+      {{v-get model property 'message'}}
+    </div>
+  {{/if}}
+</div>

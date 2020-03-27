@@ -1,0 +1,23 @@
+<div class="form-group form-check">
+  <label class="form-check-label">
+    {{input
+      checked=value
+      type="checkbox"
+      placeholder=placeholder
+      name=property
+      change=(action 'checkboxOnChange')
+    }}
+    {{yield}}
+  </label>
+  {{#if tooltip}}
+    <a class="legend-info">
+      {{fa-icon 'question-circle'}}
+      {{bs-tooltip title=tooltip}}
+    </a>
+  {{/if}}
+  {{#if showErrorMessage}}
+    <div class="help-block with-errors">
+      {{v-get model property 'message'}}
+    </div>
+  {{/if}}
+</div>
