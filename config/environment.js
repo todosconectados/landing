@@ -24,6 +24,11 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       API_URL: process.env.API_URL
+    },
+    // g-recaptcha
+    gReCaptcha: {
+      jsUrl: 'https://www.google.com/recaptcha/api.js?render=explicit',
+      siteKey: process.env.RECAPTCHA_PUBLIC_KEY
     }
   };
 

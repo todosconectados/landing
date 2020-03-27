@@ -215,4 +215,21 @@
         </div>
       </section>
   </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4 class="legend">Hola, soy un tooltip
+        <a class="legend-info">
+          {{bs-tooltip title="Holi"}}
+          {{fa-icon "question-circle"}}
+        </a>
+      </h4>
+        Hola, soy un <a onclick={{action  'termsAndConditionsClicked'}} href="#">dialog</a>.
+      </div>
+    </div>
+
 {{/base-layout}}
+
+{{#gcomm-dialog open=showDialog.termsAndConditions title="Diálogo"}}
+  {{terms-condition}}
+{{/gcomm-dialog}}
