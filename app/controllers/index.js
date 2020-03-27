@@ -34,13 +34,6 @@ export default ApplicationController.extend({
       e.preventDefault();
       this.showTermsAndConditionsDialog();
     },
-    // formOnSubmit(){
-    //   let formIsValid = this.get('formIsValid');
-    //   this.set('formIsSubmitted', true);
-    //   if(formIsValid){
-    //     this.doRequest();
-    //   }
-    // },
     formOnSubmit(){
       let formIsValid = this.get('formIsValid');
       this.set('formIsSubmitted', true);

@@ -168,6 +168,55 @@
         <h2>Dudas, colaboraciones, prensa y preguntas generales.</h2>
       </section>
       <div class="wrap-contact100">
+        {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
+          <div class="fieldset">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                {{bs-input model=user controlType="text" label="Nombre Completo*"
+                  placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="col-sm-6 form-group">
+                {{bs-input model=user controlType="text" label="Empresa/Organización*"
+                  placeholder="López" property="businessName" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-sm-6 form-group">
+                {{bs-input model=user controlType="email" label="Correo electrónico*"
+                  placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="col-sm-6 form-group">
+                {{bs-input model=user controlType="telephone" label="Teléfono*"
+                  placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
+              </div>
+              <div class="clearfix"></div>
+              <div class="clearfix"></div>
+              <div class="col-sm-12 form-group">
+                {{bs-textarea model=user controlType="text" label="Comentarios*"
+                  property="coverLetter" formIsSubmitted=formIsSubmitted}}
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-sm-4 col-sm-offset-4 form-group legal">
+            {{g-recaptcha onSuccess=(action "onCaptchaResolved")
+              hl="es"
+              onExpired=(action 'onCaptchaExpired')
+              ref=(mut gRecaptcha)
+            }}
+          </div>
+          <div class="col-sm-12 form-group legal">
+            <!-- {{#bs-checkbox model=user property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
+              Acepto el <a href="#" onclick={{action 'privacyPolicyClicked'}}>Aviso de Privacidad.</a>
+            {{/bs-checkbox}} -->
+          </div>
+          <div class="clearfix"></div>
+          <div class="actions">
+            {{bs-button class=submitBtnCls defaultText="Enviar" type="primary" buttonType="submit"}}
+            <div class="clearfix"></div>
+          </div>
+        {{/bs-form}}
+
+
 			<form class="contact100-form validate-form">
         <div class="wrap-input100 rs1-wrap-input100">
 					<span class="label-input100"><strong>Nombre Completo*</strong></span>
@@ -196,9 +245,6 @@
       </form>
   </div>
   </div>
-
-
-
   <div class="row">
     <div class="col-sm-12">
       <h4 class="legend">Hola, soy un tooltip
@@ -209,63 +255,7 @@
       </h4>
       Hola, soy un <a onclick={{action  'termsAndConditionsClicked'}} href="#">dialog</a>.
     </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-        {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
-          <div class="fieldset">
-            <div class="row">
-              <div class="col-sm-6 form-group">
-                {{bs-input model=jobApplication controlType="text" label="Nombre*"
-                  placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
-              </div>
-              <div class="col-sm-6 form-group">
-                {{bs-input model=jobApplication controlType="text" label="Apellidos*"
-                  placeholder="López" property="lastName" formIsSubmitted=formIsSubmitted}}
-              </div>
-              <div class="clearfix"></div>
-              <div class="col-sm-6 form-group">
-                {{bs-input model=jobApplication controlType="email" label="Correo Electrónico*"
-                  placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
-              </div>
-              <div class="col-sm-6 form-group">
-                {{bs-input model=jobApplication controlType="telephone" label="Teléfono*"
-                  placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
-              </div>
-              <div class="clearfix"></div>
-              <div class="clearfix"></div>
-              <div class="col-sm-12 form-group">
-                {{bs-textarea model=jobApplication controlType="text" label="Acerca de Ti*"
-                  property="coverLetter" formIsSubmitted=formIsSubmitted}}
-              </div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="col-sm-12 form-group legal">
-            {{g-recaptcha onSuccess=(action "onCaptchaResolved")
-              hl="es"
-              onExpired=(action 'onCaptchaExpired')
-              ref=(mut gRecaptcha)
-            }}
-          </div>
-          <div class="col-sm-12 form-group legal">
-            <!-- {{#bs-checkbox model=jobApplication property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
-              Acepto el <a href="#" onclick={{action 'privacyPolicyClicked'}}>Aviso de Privacidad.</a>
-            {{/bs-checkbox}} -->
-          </div>
-          <div class="clearfix"></div>
-          <div class="actions">
-            {{bs-button class=submitBtnCls defaultText="Siguiente" type="primary" buttonType="submit"}}
-            <div class="clearfix"></div>
-          </div>
-        {{/bs-form}}
-      </div>
-    </div>
-
   </div>
-
-
-
 {{/base-layout}}
 
 {{#gcomm-dialog open=showDialog.termsAndConditions title="Diálogo"}}
