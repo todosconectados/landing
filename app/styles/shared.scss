@@ -336,6 +336,9 @@ body{
     justify-content: center;
     align-items: center;
   }
+  .img-code{
+      width: 100%;
+  }
   /*Contact form*/
   .container-contact100 {
     width: 100%;
@@ -391,7 +394,13 @@ body{
    color: #666666;
    line-height: 1.5;
  }
-
+ .text-gray{
+   font-size: 2rem;
+   color: #747474;
+ }
+ .margin-top-2{
+   margin-top: 2rem;
+ }
  .input100 {
    display: block;
    width: 100%;

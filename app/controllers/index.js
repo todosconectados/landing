@@ -57,7 +57,7 @@ export default ApplicationController.extend({
         this.get('gRecaptcha').resetReCaptcha();
       }
     },
-    onCaptchaResolved: function(recaptchaResponse){
+    onCaptchaResolved(recaptchaResponse){
       this.set('recaptchaResponse', recaptchaResponse);
     },
     onCaptchaExpired(){

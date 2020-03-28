@@ -1,4 +1,30 @@
 <nav class="navbar navbar-default navbar-fixed-top">
+  <!-- <div class="container-fluid info hidden-sm hidden-xs">
+    {{nav-bar-phones}}
+    {{#if showNavBarHeader}}
+      <div class="navbar-header navbar-right info-actions hidden-xs">
+        {{#link-to 'signup-step1' class='btn btn-primary btn-sm btn-login'}}
+          ¡Contrata ya!
+        {{/link-to}}
+        <a href="{{dashboardUrl}}" class="btn btn-default btn-sm btn-login" target="_blank">
+          Inicia Sesión
+        </a>
+      </div>
+    {{/if}}
+  </div> -->
+  <!-- <div class="container-fluid info hidden-xs visible-sm">
+    {{nav-bar-phones}}
+    {{#if showNavBarHeader}}
+      <div class="navbar-header navbar-right info-actions hidden-xs">
+        {{#link-to 'signup-step1' class='btn btn-primary btn-sm btn-login'}}
+          ¡Contrata ya!
+        {{/link-to}}
+        <a href="{{dashboardUrl}}" class="btn btn-default btn-sm btn-login" target="_blank">
+          Inicia Sesión
+        </a>
+      </div>
+    {{/if}}
+  </div> -->
   <div class="container-fluid">
     <div class="navbar-header logo">
       {{#if showNav}}
@@ -10,30 +36,35 @@
         </button>
       {{/if}}
       <a href="{{homeUrl}}" class="navbar-brand">
-        <img src="/assets/images/main-logo.png" alt="TodosConectados" />
+        <img src="/assets/images/main-logo.png" alt="GurúComm" />
       </a>
     </div>
     {{#if showNav}}
       {{#bs-collapse id="navbar" collapsed=navBarIsCollapsed class="collapse navbar-collapse navbar-right"}}
         <ul class="nav navbar-nav navbar-left">
-          <li class="visible-xs">
-           {{#link-to 'signup-step1'}}
-             ¿Como funciona?
-           {{/link-to}}
+          <li>
+            {{#link-to 'sign-up'}}
+              ¿Cómo funciona?
+            {{/link-to}}
           </li>
           <li>
-            {{#link-to 'plans'}}
+            {{#link-to 'sign-up'}}
               Trabaja desde casa
             {{/link-to}}
           </li>
           <li>
-            {{#link-to 'referrals'}}
+            {{#link-to 'sign-up'}}
               Nuestro proyecto
             {{/link-to}}
           </li>
           <li>
-            {{#link-to 'total-quality'}}
+            {{#link-to 'sign-up'}}
               Contacto
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'sign-up'}}
+              Quiero mi número
             {{/link-to}}
           </li>
           <li class="visible-xs">
@@ -41,6 +72,12 @@
              Inicia Sesión
            </a>
          </li>
+          <!-- TODO: restore  -->
+          <!-- <li>
+            {{#link-to 'partner'}}
+              Únete a GurúComm
+            {{/link-to}}
+          </li> -->
         </ul>
       {{/bs-collapse}}
     {{/if}}
