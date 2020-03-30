@@ -10,6 +10,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  // funcionality
+  this.route('sign-up', { path: '/registro' });
   // default 404 handling
   this.route('not-found', { path: '*path' });
 });
