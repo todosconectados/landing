@@ -11,14 +11,18 @@ export default ApplicationController.extend({
   recaptchaResponse: null,
   formIsSubmitted: false,
   gRecaptcha: null,
-  formIsValid: Ember.computed('recaptchaResponse','lead.validations.isValid', function(){
-    let recaptchaResponse = this.get('recaptchaResponse'),
-      isValid = this.get('lead.validations.isValid'),
-      result = false
-    ;
-    if (recaptchaResponse && isValid) result = true;
-    return result;
-  }),
+  formIsValid: Ember.computed(
+    'recaptchaResponse',
+    'lead.validations.isValid',
+    function () {
+      let recaptchaResponse = this.get('recaptchaResponse'),
+        isValid = this.get('lead.validations.isValid'),
+        result = false
+      ;
+      if (recaptchaResponse && isValid) result = true;
+      return result;
+    }
+  ),
   submitBtnCls: Ember.computed('formIsValid', function(){
     let res = ['btn', 'btn-primary', 'submit'],
       formIsValid =  this.get('formIsValid')

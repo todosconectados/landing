@@ -2,7 +2,6 @@
  * @name User
  * @file app/models/user.js
  */
-import Ember from 'ember';
 import DS from 'ember-data';
 import { validator, buildValidations} from 'ember-cp-validations';
 
