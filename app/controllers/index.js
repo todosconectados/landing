@@ -19,13 +19,11 @@ export default ApplicationController.extend({
     isValidResume = this.get('isValidResume'),
     result = false
     ;
-    debugger;
     if (recaptchaResponse && isValid && isValidResume) result = true;
     return result;
   }),
   doRequest(){
     let baseHelper = this.get('base-helper');
-    debugger;
     baseHelper.loading();
     return this.doPostData()
     .then(this.dataSaveOnSuccess.bind(this))

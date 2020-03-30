@@ -377,51 +377,19 @@ body{
   justify-content: space-between;
 }
 
- /*input*/
- .wrap-input100 {
-   width: 100%;
-   position: relative;
-   background-color: transparent;
-   margin-bottom: 35px;
- }
-
- .rs1-wrap-input100 {
-   width: calc((100% - 30px) / 2);
- }
-
- .label-input100 {
-   font-size: 14px;
-   color: #666666;
-   line-height: 1.5;
- }
  .text-gray{
    font-size: 2rem;
    color: #747474;
  }
+
+.center{
+  display: flex;
+  justify-content: center;
+}
+
  .margin-top-2{
    margin-top: 2rem;
  }
- .input100 {
-   display: block;
-   width: 100%;
-   background: #ffffff;
-   border-radius: 2px;
-   font-size: 20px;
-   color: #666666;
-   line-height: 1.2;
-   padding: 0 28px;
-
-   -webkit-transition: all 0.4s;
-   -o-transition: all 0.4s;
-   -moz-transition: all 0.4s;
-   transition: all 0.4s;
-
-   margin-top: 10px;
- }
- input.input100 {
-  height: 62px;
-}
-
 
 textarea.input100 {
   min-height: 162px;
