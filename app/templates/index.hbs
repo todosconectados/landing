@@ -198,14 +198,17 @@
               ref=(mut gRecaptcha)
             }}
             {{#bs-checkbox model=user property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
-              <!-- {{action 'privacyPolicyClicked'}} -->
-              Acepto el <a href="#" onclick="#">Aviso de Privacidad</a>
+              Acepto el <a href="#" onclick={{action "privacyPolicyClicked"}}>Aviso de Privacidad</a>
             {{/bs-checkbox}}
             {{bs-button class=submitBtnCls defaultText="Enviar" type="primary" buttonType="submit"}}
           </div>
+          <div class="clearfix"></div>
         </div>
       </div>
     {{/bs-form}}
   </section>
 </div>
 {{/base-layout}}
+{{#gcomm-dialog open=showDialog.privacyPolicy title="Aviso de Privacidad"}}
+  {{privacy-policy}}
+{{/gcomm-dialog}}

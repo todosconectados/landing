@@ -12,6 +12,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   // funcionality
   this.route('sign-up', { path: '/registro' });
+  this.route('privacy-policy', { path: '/politica-de-privacidad' });
   // default 404 handling
   this.route('not-found', { path: '*path' });
 });

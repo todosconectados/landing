@@ -25,6 +25,9 @@ module.exports = function(environment) {
       // when it is created
       API_URL: process.env.API_URL
     },
+    i18n: {
+      defaultLocale: 'es',
+    },
     // g-recaptcha
     gReCaptcha: {
       jsUrl: 'https://www.google.com/recaptcha/api.js?render=explicit',
