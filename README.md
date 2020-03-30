@@ -1,12 +1,47 @@
 # Todos Conectados
 
-**tl;dr**: Iniciativa social para facilitar el trabajo remoto como respuesta a la contingencia del Virus Covid-19.
+Iniciativa social para facilitar el trabajo remoto como respuesta a la contingencia del Virus Covid-19. Landing Page desarrollada con `ember.js`.
 
 ## Índice
 
 * [Acerca del proyecto](https://github.com/todosconectados/landing#acerca-del-proyecto)
-* [Comienza](https://github.com/todosconectados/landing#comienza)
 
+## Dependencias
+
+Instala las siguientes dependencias para ejecutar el proyecto en tu ambiente de desarrollo:
+
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with NPM)
+* [Ember CLI](https://ember-cli.com/)
+
+## Instalación
+
+* `git clone <repository-url>` este repositorio
+* `cd landing`
+* `npm install`
+
+## Configurando tu ambiente de desarrollo
+
+Genera un nuevo archivo llamado `.env` en la carpeta principal del proyecto. Llena las variables de ambiente en base al archivo `.env.sample` antes de iniciar la aplicación.
+
+## Servidor de desarollo
+
+* `ember serve`
+* Visita tu aplicación en [http://localhost:4200](http://localhost:4200).
+
+## Lint
+
+Esta aplicación utiliza `eslint` para estilo de código js. Para validar tu aplicación, ejecuta:
+
+- `yarn run eslint .`
+
+## Deploy
+
+Esta aplicación utiliza los plugins de `ember-cli-deploy-s3` y `ember-cli-deploy-cloudfront` para deploy en stage y producción. Asegúrate que las configuraciones correspondientes se encuentren en tu archivo `.env` antes de ejecutar un deploy. Posteriormente, ejecuta:
+
+```
+ember deploy production --activate
+```
 
 ## Acerca del Proyecto
 
