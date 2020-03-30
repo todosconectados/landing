@@ -4,16 +4,16 @@ import ApplicationController from './application';
 import Ember from 'ember';
 
 export default ApplicationController.extend({
-  user: Ember.computed.alias('model.user'),
+  lead: Ember.computed.alias('model.lead'),
   showDialog: {
     privacyPolicy: false
   },
   recaptchaResponse: null,
   formIsSubmitted: false,
   gRecaptcha: null,
-  formIsValid: Ember.computed('recaptchaResponse','user.validations.isValid', function(){
+  formIsValid: Ember.computed('recaptchaResponse','lead.validations.isValid', function(){
     let recaptchaResponse = this.get('recaptchaResponse'),
-      isValid = this.get('user.validations.isValid'),
+      isValid = this.get('lead.validations.isValid'),
       result = false
     ;
     if (recaptchaResponse && isValid) result = true;
@@ -46,7 +46,6 @@ export default ApplicationController.extend({
       this.set('showDialog.privacyPolicy', true);
     },
     formOnSubmit(){
-      this.doRequest();
       const formIsValid = this.get('formIsValid');
 
       if (formIsValid) {

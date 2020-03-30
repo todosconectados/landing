@@ -5,10 +5,10 @@ import Scroll from '../mixins/scroll';
 export default Ember.Route.extend(Scroll, {
   model(){
     let store = this.get('store'),
-      user = store.createRecord('user')
+      lead = store.createRecord('lead')
     ;
     return Ember.RSVP.hash({
-      user: user
+      lead: lead
     });
   }
 });

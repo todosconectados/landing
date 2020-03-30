@@ -22,9 +22,9 @@
             </a>
           </div>
           <div class="btn-wrapper col-xs-6">
-            <a href="#" class="btn btn-white btn-block">
+            {{#link-to "sign-up" class="btn btn-white btn-block"}}
               {{fa-icon 'plus-circle'}} QUIERO MI NÚMERO
-            </a>
+            {{/link-to}}
           </div>
         </div>
       </div>
@@ -170,25 +170,25 @@
       <div class="fieldset">
         <div class="row">
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="text" label="Nombre Completo*"
+            {{bs-input model=lead controlType="text" label="Nombre Completo*"
             placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="text" label="Empresa/Organización*"
+            {{bs-input model=lead controlType="text" label="Empresa/Organización*"
             placeholder="López" property="businessName" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="clearfix"></div>
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="email" label="Correo electrónico*"
+            {{bs-input model=lead controlType="email" label="Correo electrónico*"
             placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="telephone" label="Teléfono*"
+            {{bs-input model=lead controlType="telephone" label="Teléfono*"
             placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="clearfix"></div>
           <div class="col-sm-12 form-group">
-            {{bs-textarea model=user controlType="text" label="Comentarios*"
+            {{bs-textarea model=lead controlType="text" label="Comentarios*"
             property="coverLetter" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-12 form-actions">
@@ -197,7 +197,7 @@
               onExpired=(action 'onCaptchaExpired')
               ref=(mut gRecaptcha)
             }}
-            {{#bs-checkbox model=user property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
+            {{#bs-checkbox model=lead property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
               Acepto el <a href="#" onclick={{action "privacyPolicyClicked"}}>Aviso de Privacidad</a>
             {{/bs-checkbox}}
             {{bs-button class=submitBtnCls defaultText="Enviar" type="primary" buttonType="submit"}}
