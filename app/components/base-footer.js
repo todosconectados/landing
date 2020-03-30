@@ -3,6 +3,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'section',
-  classNames: ['container', 'base-footer']
+  tagName: 'footer',
+  classNames: ['container-fluid', 'base-footer']
 });

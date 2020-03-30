@@ -11,26 +11,31 @@ export default ApplicationController.extend({
   },
   recaptchaResponse: null,
   formIsSubmitted: false,
-  isValidResume: false,
   gRecaptcha: null,
-  formIsValid: Ember.computed('recaptchaResponse','user.validations.isValid', 'isValidResume', function(){
+  formIsValid: Ember.computed('recaptchaResponse','user.validations.isValid', function(){
     let recaptchaResponse = this.get('recaptchaResponse'),
-    isValid = this.get('user.validations.isValid'),
-    isValidResume = this.get('isValidResume'),
-    result = false
+      isValid = this.get('user.validations.isValid'),
+      result = false
     ;
-    if (recaptchaResponse && isValid && isValidResume) result = true;
+    if (recaptchaResponse && isValid) result = true;
     return result;
+  }),
+  submitBtnCls: Ember.computed('formIsValid', function(){
+    let res = ['btn', 'btn-primary', 'submit'],
+      formIsValid =  this.get('formIsValid')
+    ;
+    if(!formIsValid) res.push('disabled');
+    return res.join(' ');
   }),
   doRequest(){
     let baseHelper = this.get('base-helper');
     baseHelper.loading();
     return this.doPostData()
-    .then(this.dataSaveOnSuccess.bind(this))
-    .catch(this.dataSaveOnError.bind(this))
-    .finally(() =>{
-      baseHelper.loaded();
-    })
+      .then(this.dataSaveOnSuccess.bind(this))
+      .catch(this.dataSaveOnError.bind(this))
+      .finally(() =>{
+        baseHelper.loaded();
+      })
     ;
   },
   showTermsAndConditionsDialog(){
@@ -50,7 +55,7 @@ export default ApplicationController.extend({
 
       if(formIsValid){
         this.doRequest();
-      }else{
+      } else {
         this.doRequest();
         this.get('gRecaptcha').resetReCaptcha();
       }
