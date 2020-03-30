@@ -17,17 +17,17 @@
       {{#bs-collapse id="navbar" collapsed=navBarIsCollapsed class="collapse navbar-collapse navbar-right"}}
         <ul class="nav navbar-nav navbar-left">
           <li>
-              <a href="#how">
-              ¿Cómo funciona?
-              </a>
+            <a href="#how-it-works">
+            ¿Cómo funciona?
+            </a>
           </li>
           <li>
-            <a href="#home">
+            <a href="#work-from-home">
               Trabaja desde casa
             </a>
           </li>
           <li>
-            <a href="#proyect">
+            <a href="#about">
               Nuestro proyecto
             </a>
           </li>
@@ -37,16 +37,10 @@
               </a>
           </li>
           <li>
-            {{#link-to 'sign-up'}}
+            {{#link-to "sign-up" class="btn btn-primary"}}
               Quiero mi número
             {{/link-to}}
           </li>
-          <li class="visible-xs">
-           <a href="{{dashboardUrl}}" target="_blank">
-             Inicia Sesión
-           </a>
-         </li>
-          <!-- TODO: restore  -->
         </ul>
       {{/bs-collapse}}
     {{/if}}

@@ -1,231 +1,211 @@
 {{#base-layout}}
 <div class="index-view">
-  <section class="slider">
-    <section class="container">
-      <div class="col-sm-5 highlight-image">
+  <section class="slider container-fluid">
+    <div class="container">
+      <div class="col-sm-5 highlight-image hidden-xs">
         <img class="img-responsive" src="/assets/images/highlight.png"
         alt="Todos Conectados">
       </div>
       <div class="col-sm-7 highlight">
         <h1>
-          Servicio <strong>gratuito </strong>de conferencias electrónicas
+          Servicio <strong>gratuito </strong>de conferencias telefónicas.
         </h1>
         <div class="line-slider"></div>
         <h2>
           Iniciativa social para <strong>facilitar el trabajo remoto</strong>
           como respuesta a la contingencia del virus Covid-19.
         </h2>
-        <div id="how" class="btn-container">
-          <div class="btn-wrapper col-sm-6 col-xs-12">
+        <div id="how" class="btn-container row">
+          <div class="btn-wrapper col-xs-6">
             <a href="#" class="btn btn-white btn-block">
               {{fa-icon 'question-circle'}} ¿CÓMO FUNCIONA?
             </a>
           </div>
-          <div class="btn-wrapper col-sm-6 col-xs-12">
+          <div class="btn-wrapper col-xs-6">
             <a href="#" class="btn btn-white btn-block">
-              {{fa-icon 'plus-circle'}} OBTENER MI NÚMERO
+              {{fa-icon 'plus-circle'}} QUIERO MI NÚMERO
             </a>
           </div>
         </div>
       </div>
       <div class="col-sm-5 highlight-image visible-xs">
-        <!-- {{#link-to 'long-term-promos'}}
-        <img src="/assets/images/highlight_marzo.png" class="img-center"
-        alt="Proyecto social Todos Conectados" >
-        {{/link-to}} -->
+        <img class="img-responsive" src="/assets/images/highlight.png"
+        alt="Todos Conectados">
       </div>
-    </section>
+    </div>
   </section>
-  <section class="container-fluid light-gray">
+  <section id="how-it-works" class="container-fluid site-section">
     <div class="container">
       <h1>¿Cómo <strong>funciona</strong>?</h1>
       <div class="line-gray"></div>
-      <div class="row" >
+      <div class="row">
+        <div class="element col-sm-4">
+          <img class="img-responsive" src="/assets/images/signup_tc.png" alt="Registrate">
+          <h2>Regístrate</h2>
+          <p class="text-center">
+            Completa tu registro en línea en <strong>3 minutos.</strong>
+          </p>
+        </div>
+        <div class="element col-sm-4">
+          <img class="img-responsive" src="/assets/images/number_tc.png" alt="Obtén tu número privado">
+          <h2>Obtén tu número privado</h2>
+          <p class="text-center">
+            Te asignamos un número teléfonico <strong>al instante</strong> y un <strong>código de acceso.</strong>
+          </p>
+        </div>
+        <div class="element col-sm-4">
+          <img class="img-responsive" src="/assets/images/share_tc.png" alt="Compártelo">
+          <h2>Compártelo</h2>
+          <p class="text-center">
+            Envía el número y código de acceso  a tus compañer@s de trabajo y podrán tener
+            <strong>conferencias ilimitadas.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="work-from-home"  class="container-fluid site-section primary">
+    <div class="container">
+      <h1>Trabaja desde <strong>casa</strong></h1>
+      <div class="line-title"></div>
+      <h2>Aumenta tu <strong>productividad</strong> y mantente <strong>conectad@</strong></h2>
+      <div class="row steps">
+        <div class="col-sm-6 img-highlight">
+          <img src="/assets/images/homeoff.png" class="img-responsive" alt="Trabaja desde casa">
+        </div>
+        <div class="col-sm-6">
+          <div class="step">
+            <img src="/assets/images/app_tc.png" class="img-responsive">
+            <h3>
+              Sin instalación de apps externas o uso de tus datos celulares.
+            </h3>
+          </div>
+          <div class="step">
+            <img src="/assets/images/collab_tc.png" class="img-responsive">
+            <h3>
+              Todas las conferencias son <strong>gratuitas e ilimitadas</strong>, invita hasta
+              5 compañer@s de manera simultánea.
+            </h3>
+          </div>
+          <div class="step">
+            <img src="/assets/images/communication_tc.png" class="img-responsive">
+            <h3>
+              Mantén a tu <strong>equipo comunicado</strong> dónde quiera que estés.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="container-fluid site-section">
+    <div class="container">
+      <h1>Iniciativa social sin <strong>fines de lucro</strong></h1>
+      <div class="line-gray"></div>
+      <h2>
+        Somos un equipo multidisciplinario cuyo objetivo es
+        <strong>incrementar la productividad</strong>
+        de todos los trabajadores mexican@s a través de la tecnología.
+      </h2>
+      <div class="row">
+        <div class="element col-sm-4">
+          <img class="img-responsive" src="/assets/images/opensource_tc.png" alt="Código Abierto">
+          <h3>Open Source</h3>
+          <p class="text-center">
+            Código alojado en <strong>Github</strong> con apertura a colaboración global de cualquier developer.
+            <br />
+            <a href="https://github.com/todosconectados/api" class="btn btn-primary" target="_blank">
+              {{fa-icon "github" prefix="fab"}}
+              Únete al proyecto
+            </a>
+          </p>
+        </div>
+        <div class="element col-sm-4">
+          <img class="img-responsive" src="/assets/images/team.png" alt="¿Por qué es gratis?">
+          <h3>¿Por qué es gratis?</h3>
+          <p class="text-center">
+            La iniciativa es apoyada por empresas de <strong>telecomunicaciones</strong>
+            que otorgan el servicio gratuito de voz.
+          </p>
+        </div>
+        <div class="element col-sm-4">
+          <img class="img-responsive" src="/assets/images/telecom_tc.png" alt="¿Por qué telefonía">
+          <h3>¿Por qué telefonía?</h3>
+          <p class="text-center">
+            Las redes celulares de voz tienen un despliegue de 93% a nivel nacional.
+            La mayoría de los mexicanos pueden utilizar este servicio <strong>sin datos</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="sponsors" class="container-fluid site-section light">
+    <div class="container">
+      <h1>Patrocinadores</h1>
+      <div class="line-gray"></div>
+      <h2>Agradecemos el apoyo de las empresas y orgnizaciones que hacen este proyecto posible</h2>
+      <div class="row">
         <div class="col-sm-4">
-          <div class="icons-description center-items">
-            <img src="/assets/images/signup_tc.png" alt="Registrate">
-          </div>
-          <p class="text-center"><b>Regístrate</b><br>Completa tu registro en línea en <strong>3 minutos.</strong></p>
+          <a href="https://internet.gurucomm.mx" target="_blank">
+            <img class="img-responsive" src="/assets/images/GC_tc.png" alt="GurúComm">
+          </a>
         </div>
         <div class="col-sm-4">
-          <div class="icons-description center-items">
-            <img src="/assets/images/number_tc.png" alt="Obtén tu número privado">
+          <a href="https://haz.com.mx/" target="_blank">
+            <img class="img-responsive" src="/assets/images/HAZ_tc.png" alt="HAZ">
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://thegurucompany.com" target="_blank">
+            <img class="img-responsive" src="/assets/images/TGC_tc.png" alt="The Guru Company">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="container site-section">
+    <h1>Contacto</h1>
+    <div class="line-gray"></div>
+    <h2>Preguntas, colaboraciones, prensa y atención general.</h2>
+    {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
+      <div class="fieldset">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            {{bs-input model=user controlType="text" label="Nombre Completo*"
+            placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
           </div>
-          <p class="text-center"><b>Obtén tu número privado</b><br>
-            Te asignamos un número teléfonico <strong>al instante</strong> y un <strong>código de acceso.</strong></p>
+          <div class="col-sm-6 form-group">
+            {{bs-input model=user controlType="text" label="Empresa/Organización*"
+            placeholder="López" property="businessName" formIsSubmitted=formIsSubmitted}}
           </div>
-          <div class="col-sm-4">
-            <div class="icons-description center-items">
-              <img src="/assets/images/share_tc.png" alt="Compártelo">
-            </div>
-            <p class="text-center"><b>Compártelo</b><br>
-              Envía el número y código de acceso  a tus compañer@s de trabajo y podrán tener
-              <strong>conferencias ilimitadas.</strong></p>
-            </div>
+          <div class="clearfix"></div>
+          <div class="col-sm-6 form-group">
+            {{bs-input model=user controlType="email" label="Correo electrónico*"
+            placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
+          </div>
+          <div class="col-sm-6 form-group">
+            {{bs-input model=user controlType="telephone" label="Teléfono*"
+            placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-sm-12 form-group">
+            {{bs-textarea model=user controlType="text" label="Comentarios*"
+            property="coverLetter" formIsSubmitted=formIsSubmitted}}
+          </div>
+          <div class="col-sm-12 form-actions">
+            {{g-recaptcha onSuccess=(action "onCaptchaResolved")
+              hl="es"
+              onExpired=(action 'onCaptchaExpired')
+              ref=(mut gRecaptcha)
+            }}
+            {{#bs-checkbox model=user property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
+              <!-- {{action 'privacyPolicyClicked'}} -->
+              Acepto el <a href="#" onclick="#">Aviso de Privacidad</a>
+            {{/bs-checkbox}}
+            {{bs-button class=submitBtnCls defaultText="Enviar" type="primary" buttonType="submit"}}
           </div>
         </div>
-      </section>
-      <section id="home"  class="container-fluid light-primary">
-        <div class="container">
-          <h1><br>Trabaja desde <strong>casa</strong></h1>
-          <div class="line-title"></div>
-          <h2>Aumenta tu <strong>productividad</strong> y mantente <strong>conectad@</strong></h2>
-          <div class="row padd-top">
-            <div class="col-sm-6">
-              <img src="/assets/images/homeoff.png" class="homeoff-high" alt="Trabaja desde casa">
-            </div>
-            <div class="col-sm-6">
-              <div class="container-icons-steps">
-                <div class="container-steps">
-                  <img src="/assets/images/app_tc.png" class="icon-step">
-                  <h2>
-                    Sin instalación de apps externas o uso de tus datos celulares.
-                  </h2>
-                </div>
-                <div class="container-steps">
-                  <img src="/assets/images/collab_tc.png" class="icon-step">
-                  <h2>
-                    Todas las conferencias son <strong>gratuitas e ilimitadas</strong>, invita hasta
-                    5 compañer@s de manera simultánea.
-                  </h2>
-                </div>
-                <div class="container-steps">
-                  <img src="/assets/images/communication_tc.png" class="icon-step">
-                  <h2>
-                    Manten a tu <strong>equipo comunicado</strong> dónde quiera que estés.
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="proyect" class="container-fluid light-gray">
-        <div class="container">
-          <h1>Iniciativa social sin <strong>fines de lucro</strong></h1>
-          <div class="line-gray"></div>
-          <h2>Somos un equipo multidisciplinario cuyo objetivo es <strong>incrementar
-            la productividad</strong> de todos los trabajadores mexican@s a través de la
-            tecnología.</h2>
-            <div class="row" >
-              <div class="col-sm-4">
-                <div class="icons-description center-items">
-                  <img src="/assets/images/opensource_tc.png" alt="Código Abierto">
-                </div>
-                <p class="text-center"><b>Código abierto</b><br>Código alojado
-                  en Github con apertura a colaboración global de cualquier developer.</p>
-                </div>
-                <div class="col-sm-4">
-                  <div class="icons-description center-items">
-                    <img src="/assets/images/team.png" alt="¿Por qué es gratis?">
-                  </div>
-                  <p class="text-center"><b>¿Por qué es gratis?</b><br>
-                    La iniciativa es apoyada por empresas de <strong>telecomunicaciones</strong>
-                    que otorgan el servicio gratuito de voz.</p>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="icons-description center-items">
-                      <img src="/assets/images/telecom_tc.png" alt="¿Por qué telefonía">
-                    </div>
-                    <p class="text-center"><b>¿Por qué telefonía?</b><br>
-                      Las redes celulares de voz tienen un despliegue de 93% a nivel nacional.
-                      La mayoría de los mexicanos pueden utilizar este servicio <strong>sin datos</strong>.</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="container-fluid" style="background-color:#f5f5f5">
-                <div class="container">
-                  <h1><br>Patrocinadores</h1>
-                  <div class="line-gray"></div>
-                  <h2>Agradecemos el patrocinio de las empresas y orgnizaciones</h2>
-                  <div class="row" >
-                    <div class="col-sm-4">
-                      <div class="icons-description center-items">
-                        <img src="/assets/images/GC_tc.png" alt="GurúComm">
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="icons-description center-items">
-                        <img src="/assets/images/HAZ_tc.png" alt="HAZ">
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="icons-description center-items">
-                        <img src="/assets/images/TGC_tc.png" alt="The Guru Company">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section id="contact" class="container contact-container">
-                <h1><br>Contacto</h1>
-                <div class="line-gray"></div>
-                <h2>Dudas, colaboraciones, prensa y preguntas generales.</h2>
-              </section>
-              <div class="container contact-container">
-                {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
-                <div class="fieldset margin-top-2">
-                  <div class="row">
-                    <div class="col-sm-6 form-group">
-                      {{bs-input model=user controlType="text" label="Nombre Completo*"
-                      placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
-                    </div>
-                    <div class="col-sm-6 form-group">
-                      {{bs-input model=user controlType="text" label="Empresa/Organización*"
-                      placeholder="López" property="businessName" formIsSubmitted=formIsSubmitted}}
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-sm-6 form-group">
-                      {{bs-input model=user controlType="email" label="Correo electrónico*"
-                      placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
-                    </div>
-                    <div class="col-sm-6 form-group">
-                      {{bs-input model=user controlType="telephone" label="Teléfono*"
-                      placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="clearfix"></div>
-                    <div class="col-sm-12 form-group">
-                      {{bs-textarea model=user controlType="text" label="Comentarios*"
-                      property="coverLetter" formIsSubmitted=formIsSubmitted}}
-                    </div>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-sm-4 col-sm-offset-4 form-group legal">
-                  {{g-recaptcha onSuccess=(action "onCaptchaResolved")
-                  hl="es"
-                  onExpired=(action 'onCaptchaExpired')
-                  ref=(mut gRecaptcha)
-                }}
-              </div>
-              <div class="col-sm-12 form-group legal">
-                <!-- {{#bs-checkbox model=user property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
-                Acepto el <a href="#" onclick={{action 'privacyPolicyClicked'}}>Aviso de Privacidad.</a>
-                {{/bs-checkbox}} -->
-              </div>
-              <div class="clearfix"></div>
-              <div class="actions center">
-                {{bs-button class=submitBtnCls defaultText="Enviar" type="primary" buttonType="submit"}}
-                <div class="clearfix"></div>
-              </div>
-              {{/bs-form}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <h4 class="legend">Hola, soy un tooltip
-                <a class="legend-info">
-                  {{bs-tooltip title="Holi"}}
-                  {{fa-icon "question-circle"}}
-                </a>
-              </h4>
-              Hola, soy un <a onclick={{action  'termsAndConditionsClicked'}} href="#">dialog</a>.
-            </div>
-          </div>
-          {{/base-layout}}
-
-          {{#gcomm-dialog open=showDialog.termsAndConditions title="Diálogo"}}
-          {{terms-condition}}
-          {{/gcomm-dialog}}
+      </div>
+    {{/bs-form}}
+  </section>
+</div>
+{{/base-layout}}
