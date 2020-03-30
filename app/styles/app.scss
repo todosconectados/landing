@@ -5,7 +5,17 @@
 @import 'res/mixins';
 // libs
 @import 'ember-bootstrap/bootstrap';
+// includes
+@import 'includes/navbar';
 // shared
 @import 'shared';
 // components
 @import 'components/base-footer';
+@import 'components/gcomm-dialog';
+@import 'components/application-loader';
+// views
+@import 'views/sign-up';
+@import 'views/activation';
+@import 'views/confirmation';
+@import 'views/validation';
+@import 'views/thank-you';
