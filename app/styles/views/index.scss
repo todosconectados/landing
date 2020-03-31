@@ -1,13 +1,6 @@
 .index-view{
   .slider{
     @include bg-color($brand-primary);
-    background-image:
-    url('/assets/images/home-bg.png');
-    background-size: cover;
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
     .line-slider{
       width: 40%;
       height: 1px;
