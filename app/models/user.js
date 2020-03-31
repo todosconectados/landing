@@ -44,9 +44,7 @@ const Validations = buildValidations({
     })
   ],
   termsAndConditionsAcceptance: [
-    validator('presence', {
-      presence: true
-    })
+    validator('presence', { presence: true })
   ]
 });
 

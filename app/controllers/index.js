@@ -1,7 +1,7 @@
 /* eslint-env node */
 'use strict';
-import ApplicationController from './application';
 import Ember from 'ember';
+import ApplicationController from './application';
 
 export default ApplicationController.extend({
   lead: Ember.computed.alias('model.lead'),
@@ -46,7 +46,7 @@ export default ApplicationController.extend({
   leadSavedOnSuccess () {
     this.set('showDialog.leadSuccess', true);
   },
-  leadSavedOnError (e) {
+  leadSavedOnError () {
     const baseHelper = this.get('base-helper');
     baseHelper.serverError();
   },
