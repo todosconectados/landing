@@ -200,7 +200,8 @@
             {{#bs-checkbox model=lead property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
               Acepto el <a href="#" onclick={{action "privacyPolicyClicked"}}>Aviso de Privacidad</a>
             {{/bs-checkbox}}
-            {{bs-button class=submitBtnCls defaultText="Enviar" type="primary" buttonType="submit"}}
+            {{bs-button class=submitBtnCls
+              defaultText="Enviar" type="primary" buttonType="submit"}}
           </div>
           <div class="clearfix"></div>
         </div>
@@ -211,4 +212,12 @@
 {{/base-layout}}
 {{#gcomm-dialog open=showDialog.privacyPolicy title="Aviso de Privacidad"}}
   {{privacy-policy}}
+{{/gcomm-dialog}}
+{{#gcomm-dialog open=showDialog.leadSuccess title="Gracias por pensar en TodosConectados"}}
+  <p class="strong text-center">
+    Tus datos han sido guardados.
+  </p>
+  <p class="text-center">
+    Nos pondremos en contacto contigo a la brevedad.
+  </p>
 {{/gcomm-dialog}}

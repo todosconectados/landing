@@ -6,7 +6,8 @@ import Ember from 'ember';
 export default ApplicationController.extend({
   lead: Ember.computed.alias('model.lead'),
   showDialog: {
-    privacyPolicy: false
+    privacyPolicy: false,
+    leadSuccess: false
   },
   recaptchaResponse: null,
   formIsSubmitted: false,
@@ -43,8 +44,7 @@ export default ApplicationController.extend({
     ;
   },
   leadSavedOnSuccess () {
-    debugger;
-    // TODO
+    this.set('showDialog.leadSuccess', true);
   },
   leadSavedOnError (e) {
     const baseHelper = this.get('base-helper');
