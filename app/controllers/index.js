@@ -9,19 +9,24 @@ export default ApplicationController.extend({
   lead: Ember.computed.alias('model.lead'),
   showDialog: {
     privacyPolicy: false,
+    leadSuccess: false,
     youtube: false
   },
   recaptchaResponse: null,
   formIsSubmitted: false,
   gRecaptcha: null,
-  formIsValid: Ember.computed('recaptchaResponse','lead.validations.isValid', function(){
-    let recaptchaResponse = this.get('recaptchaResponse'),
-      isValid = this.get('lead.validations.isValid'),
-      result = false
-    ;
-    if (recaptchaResponse && isValid) result = true;
-    return result;
-  }),
+  formIsValid: Ember.computed(
+    'recaptchaResponse',
+    'lead.validations.isValid',
+    function () {
+      let recaptchaResponse = this.get('recaptchaResponse'),
+        isValid = this.get('lead.validations.isValid'),
+        result = false
+      ;
+      if (recaptchaResponse && isValid) result = true;
+      return result;
+    }
+  ),
   submitBtnCls: Ember.computed('formIsValid', function(){
     let res = ['btn', 'btn-primary', 'submit'],
       formIsValid =  this.get('formIsValid')
@@ -30,15 +35,23 @@ export default ApplicationController.extend({
     return res.join(' ');
   }),
   doRequest(){
-    let baseHelper = this.get('base-helper');
+    const baseHelper = this.get('base-helper');
     baseHelper.loading();
-    // return this.doPostData()
-    //   .then(this.dataSaveOnSuccess.bind(this))
-    //   .catch(this.dataSaveOnError.bind(this))
-    //   .finally(() =>{
-    //     baseHelper.loaded();
-    //   })
-    // ;
+    const lead = this.get('lead');
+    return lead.save()
+      .then(this.leadSavedOnSuccess.bind(this))
+      .catch(this.leadSavedOnError.bind(this))
+      .finally(() =>{
+        baseHelper.loaded();
+      })
+    ;
+  },
+  leadSavedOnSuccess () {
+    this.set('showDialog.leadSuccess', true);
+  },
+  leadSavedOnError () {
+    const baseHelper = this.get('base-helper');
+    baseHelper.serverError();
   },
   showYoutubeVideo(){
     this.set('showDialog.youtube', true);

@@ -29,7 +29,7 @@ export default Ember.Service.extend({
     }
   },
   serverError(){
-    let notifications = this.get('notifications');
+    const notifications = this.get('notifications');
     notifications.error('Ocurrió un error en el servidor. Intente más tarde.');
   }
 });

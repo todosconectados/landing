@@ -10,11 +10,7 @@ export default DS.RESTAdapter.extend({
   namespace: '',
   session: Ember.inject.service(),
   ajax(url, type, hash){
-    let session = this.get('session'),
-      adapterParams = this.get('session.adapterParams'),
-      latitude = session.get('latitude'),
-      longitude = session.get('longitude')
-    ;
+    const adapterParams = this.get('session.adapterParams');
     if (Ember.isEmpty(hash)) hash = {};
     if (Ember.isEmpty(hash.data)) hash.data = {};
     if(!Ember.isEmpty(adapterParams)){
@@ -26,7 +22,7 @@ export default DS.RESTAdapter.extend({
    * Creates API endpoint URL based on name
    */
   pathForType: function(type) {
-    var dasherized = Ember.String.underscore(type);
+    const dasherized = Ember.String.underscore(type);
     return pluralize(dasherized);
   }
 });
