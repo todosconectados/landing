@@ -26,9 +26,7 @@ const Validations = buildValidations({
     })
   ],
   phone: [
-    validator('presence', {
-      presence: true
-    }),
+    validator('presence', { presence: true }),
     validator('length', {
       is: 10,
       message: 'Escribe tu número en 10 dígitos',
@@ -64,8 +62,19 @@ export default DS.Model.extend(Validations,{
   activationCode: DS.attr('string'),
   shouldValidateAcceptance: DS.attr('boolean', { defaultValue: false }),
   /**
-  * Virtual Attributes
-  */
+   * Virtual Attributes
+   */
   privacyAcceptance: DS.attr('boolean'),
-  termsAndConditionsAcceptance: DS.attr('boolean')
+  termsAndConditionsAcceptance: DS.attr('boolean'),
+  /**
+   * Associations
+   */
+  dialer: DS.attr(),
+  dialerObject: Ember.computed('dialer', function () {
+    const dialer = this.get('dialer');
+    const store = this.get('store');
+    const data = store.normalize('dialer', dialer);
+    const result = store.push(data);
+    return result;
+  }),
 });
