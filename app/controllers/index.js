@@ -31,15 +31,24 @@ export default ApplicationController.extend({
     return res.join(' ');
   }),
   doRequest(){
-    let baseHelper = this.get('base-helper');
+    const baseHelper = this.get('base-helper');
     baseHelper.loading();
-    // return this.doPostData()
-    //   .then(this.dataSaveOnSuccess.bind(this))
-    //   .catch(this.dataSaveOnError.bind(this))
-    //   .finally(() =>{
-    //     baseHelper.loaded();
-    //   })
-    // ;
+    const lead = this.get('lead');
+    return lead.save()
+      .then(this.leadSavedOnSuccess.bind(this))
+      .catch(this.leadSavedOnError.bind(this))
+      .finally(() =>{
+        baseHelper.loaded();
+      })
+    ;
+  },
+  leadSavedOnSuccess () {
+    debugger;
+    // TODO
+  },
+  leadSavedOnError (e) {
+    const baseHelper = this.get('base-helper');
+    baseHelper.serverError();
   },
   showTermsAndConditionsDialog(){
     this.set('showDialog.termsAndConditions', true);

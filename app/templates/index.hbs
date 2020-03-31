@@ -64,7 +64,7 @@
       </div>
     </div>
   </section>
-  <section id="work-from-home"  class="container-fluid site-section primary">
+  <section id="work-from-home" class="container-fluid site-section primary">
     <div class="container">
       <h1>Trabaja desde <strong>casa</strong></h1>
       <div class="line-title"></div>
@@ -171,25 +171,25 @@
         <div class="row">
           <div class="col-sm-6 form-group">
             {{bs-input model=lead controlType="text" label="Nombre Completo*"
-            placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
+              placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-6 form-group">
             {{bs-input model=lead controlType="text" label="Empresa/Organización*"
-            placeholder="López" property="businessName" formIsSubmitted=formIsSubmitted}}
+              placeholder="López" property="companyName" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="clearfix"></div>
           <div class="col-sm-6 form-group">
             {{bs-input model=lead controlType="email" label="Correo electrónico*"
-            placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
+              placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-6 form-group">
             {{bs-input model=lead controlType="telephone" label="Teléfono*"
-            placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
+              placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="clearfix"></div>
           <div class="col-sm-12 form-group">
             {{bs-textarea model=lead controlType="text" label="Comentarios*"
-            property="coverLetter" formIsSubmitted=formIsSubmitted}}
+              property="comments" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-12 form-actions">
             {{g-recaptcha onSuccess=(action "onCaptchaResolved")
