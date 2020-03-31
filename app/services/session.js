@@ -18,6 +18,12 @@ export default Ember.Service.extend({
   loadCookies(){
     this.set('signupUserId', Cookie.get('signupUserId'));
   },
+  /**
+   * Clear all saved cookies
+   */
+  clearCookies(){
+    Cookie.remove('signupUserId');
+  },
   setSignupUserId(signupUserId) {
     this.set('signupUserId', signupUserId);
     Cookie.set('signupUserId', signupUserId);

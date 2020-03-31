@@ -44,11 +44,9 @@ export default ApplicationController.extend({
     });
   },
   userSavedOnSuccess () {
-    debugger;
     this.transitionToRoute('validation');
   },
-  userSavedOnError (e) {
-    debugger;
+  userSavedOnError () {
     const baseHelper = this.get('base-helper');
     baseHelper.serverError();
   },
