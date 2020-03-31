@@ -14,7 +14,7 @@ export default ApplicationController.extend({
     return res.join(' ');
   }),
   doRequest(){
-    let baseHelper = this.get('base-helper');
+    const baseHelper = this.get('base-helper');
     baseHelper.loading();
     // TODO: HTTP request
   },
