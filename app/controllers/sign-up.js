@@ -53,7 +53,8 @@ export default ApplicationController.extend({
   },
   userSavedOnSuccess (user) {
     const session = this.get('session');
-    debugger;
+    const signupUserId = user.get('id');
+    session.setSignupUserId(signupUserId);
     this.transitionToRoute('activation');
   },
   userSavedOnError () {
