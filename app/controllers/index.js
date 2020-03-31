@@ -1,12 +1,15 @@
 /* eslint-env node */
 'use strict';
 import ApplicationController from './application';
+import ENV from 'landing/config/environment';
 import Ember from 'ember';
 
 export default ApplicationController.extend({
+  youtubeId: ENV.APP.YOUTUBE_FEATURED_VIDEO_ID,
   lead: Ember.computed.alias('model.lead'),
   showDialog: {
-    privacyPolicy: false
+    privacyPolicy: false,
+    youtube: false
   },
   recaptchaResponse: null,
   formIsSubmitted: false,
@@ -37,6 +40,9 @@ export default ApplicationController.extend({
     //   })
     // ;
   },
+  showYoutubeVideo(){
+    this.set('showDialog.youtube', true);
+  },
   showTermsAndConditionsDialog(){
     this.set('showDialog.termsAndConditions', true);
   },
@@ -61,6 +67,10 @@ export default ApplicationController.extend({
     onCaptchaExpired(){
       this.set('recaptchaResponse', null);
       this.get('gRecaptcha').resetReCaptcha();
+    },
+    showYoutubeVideoClicked(e){
+      e.preventDefault();
+      this.showYoutubeVideo();
     }
   }
 });

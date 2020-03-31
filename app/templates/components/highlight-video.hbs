@@ -1,0 +1,17 @@
+{{#if visible}}
+  {{ember-youtube
+    playerVars=playerVars
+    ytid=youtubeId
+    volume=0
+    class="video"
+    showControls=0
+    showProgress=false
+    showDebug=false
+    ended="ytEnded"
+    delegate=this
+    delegate-as="emberYoutube"
+  }}
+  <a href="#" class="btn-close" onclick={{action "playerCloseClicked"}}>
+    {{ fa-icon "times" }}
+  </a>
+{{/if}}

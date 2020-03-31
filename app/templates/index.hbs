@@ -17,8 +17,8 @@
         </h2>
         <div id="how" class="btn-container row">
           <div class="btn-wrapper col-xs-6">
-            <a href="#" class="btn btn-white btn-block">
-              {{fa-icon 'question-circle'}} ¿CÓMO FUNCIONA?
+            <a href="#" class="btn btn-white btn-block" onclick={{action 'showYoutubeVideoClicked'}}>
+              {{fa-icon 'play-circle'}} ¿CÓMO FUNCIONA?
             </a>
           </div>
           <div class="btn-wrapper col-xs-6">
@@ -212,3 +212,6 @@
 {{#gcomm-dialog open=showDialog.privacyPolicy title="Aviso de Privacidad"}}
   {{privacy-policy}}
 {{/gcomm-dialog}}
+{{#ember-wormhole to="destination"}}
+  {{highlight-video youtubeId=youtubeId visible=showDialog.youtube}}
+{{/ember-wormhole}}

@@ -19,11 +19,11 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      API_URL: process.env.API_URL
+      API_URL: process.env.API_URL,
+      YOUTUBE_FEATURED_VIDEO_ID: process.env.YOUTUBE_FEATURED_VIDEO_ID
     },
     i18n: {
       defaultLocale: 'es',
