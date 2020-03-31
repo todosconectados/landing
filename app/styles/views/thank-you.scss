@@ -42,7 +42,25 @@
       font-size: 2.0rem;
       font-weight: $bold;
     }
-    h2{
+    .result{
+      margin-top: 1.0rem;
+      font-weight: $bold;
+      font-size: 1.6rem;
+      &.code{
+        padding-top: 1.0rem;
+        padding-bottom: 1.0rem;
+        border: 1px solid $light-gray-line;
+        max-width: 12.0rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        @include bg-color($bg-light-gray);
+        text-align: center;
+        color: $dark-gray;
+      }
+    }
+    h3{
+      font-weight: $bold;
       font-size: 1.4rem;
     }
   }
