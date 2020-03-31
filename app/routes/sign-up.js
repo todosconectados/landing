@@ -2,4 +2,13 @@
 'use strict';
 import Ember from 'ember';
 
-export default Ember.Route.extend({});
+export default Ember.Route.extend({
+  model(){
+    let store = this.get('store'),
+      user = store.createRecord('user')
+    ;
+    return Ember.RSVP.hash({
+      user: user
+    });
+  }
+});

@@ -12,7 +12,9 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   // funcionality
   this.route('sign-up', { path: '/quiero-mi-numero' });
+  this.route('validation', { path: '/valida-tu-cuenta' });
   this.route('privacy-policy', { path: '/politica-de-privacidad' });
+  this.route('terms-and-conditions', { path: '/terminos-y-condiciones' });
   // default 404 handling
   this.route('not-found', { path: '*path' });
 });
