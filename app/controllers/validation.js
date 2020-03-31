@@ -7,6 +7,9 @@ import ApplicationController from './application';
 export default ApplicationController.extend({
   user: Ember.computed.alias('model.user'),
   formIsValid: Ember.computed.alias('user.validations.isValid'),
+  showDialog: {
+    invalidCode: false
+  },
   formIsSubmitted: false,
   submitBtnCls: Ember.computed('formIsValid', function(){
     let res = ['btn', 'btn-primary', 'submit'],
@@ -43,15 +46,20 @@ export default ApplicationController.extend({
       });
     });
   },
-  userSavedOnSuccess () {
+  userSavedOnSuccess (response) {
     const session = this.get('session');
     session.clearCookies();
+    const store = this.get('store');
+    const userData = store.normalize('user', response.user);
+    const user = store.push(userData);
+    const dialer = user.get('dialerObject');
+    debugger;
+    session.setDialerCookies(dialer);
     this.transitionToRoute('thank-you');
   },
   userSavedOnError (e) {
     debugger;
-    const baseHelper = this.get('base-helper');
-    baseHelper.serverError();
+    this.set('showDialog.invalidCode', true);
   },
   actions: {
     formOnSubmit(){
@@ -61,6 +69,9 @@ export default ApplicationController.extend({
       } else {
         this.set('formIsSubmitted', true);
       }
+    },
+    closeInvalidCodeDialog () {
+      this.set('showDialog.invalidCode', false);
     }
   }
 });

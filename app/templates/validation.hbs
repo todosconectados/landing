@@ -1,26 +1,45 @@
 {{#base-layout}}
-<div class="signup-view container-fluid">
-  <div class="container">
-    <h1>Enviamos tu código</h1>
-    <div class="line-gray"></div>
-    <h2>
-      Por último, ingresa el <strong>código de validación</strong> que enviamos a tu celular
-    </h2>
-    {{signup-steps
-      selectedIndex=2}}
-  </div>
-  <div class="container signup-form single small">
-    {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
-      <img class="img-responsive banner" src="/assets/images/sms_tc.png"
-        alt="Valida tu cuenta">
-      <div class="row">
-        <div class="col-sm-12 single-field">
-          {{bs-input model=user controlType="text" label="Ingresa el código de validación*"
-            placeholder="4 dígitos" property="activationCode" formIsSubmitted=formIsSubmitted}}
-          {{bs-button class=submitBtnCls defaultText="Validar código" type="primary" buttonType="submit"}}
+  <div class="signup-view container-fluid">
+    <div class="container">
+      <h1>Enviamos tu código</h1>
+      <div class="line-gray"></div>
+      <h2>
+        Por último, ingresa el <strong>código de validación</strong> que enviamos a tu celular
+      </h2>
+      {{signup-steps
+        selectedIndex=2}}
+    </div>
+    <div class="container signup-form single small">
+      {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
+        <img class="img-responsive banner" src="/assets/images/sms_tc.png"
+          alt="Valida tu cuenta">
+        <div class="row">
+          <div class="col-sm-12 single-field">
+            {{bs-input model=user controlType="text" label="Ingresa el código de validación*"
+              placeholder="4 dígitos" property="activationCode" formIsSubmitted=formIsSubmitted}}
+            {{bs-button class=submitBtnCls defaultText="Validar código" type="primary" buttonType="submit"}}
+          </div>
         </div>
-      </div>
-    {{/bs-form}}
+      {{/bs-form}}
+    </div>
   </div>
-</div>
 {{/base-layout}}
+{{#gcomm-dialog open=showDialog.invalidCode title="Código incorrecto"}}
+  <div class="row">
+    <div class="tc-error-img">
+      <img class="img-code" src="/assets/images/error_tc.png"
+        alt="Pin inválido">
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="margin-bottom-1 text-gray">
+      Valida tu información e intenta nuevamente
+    </h1>
+  </div>
+  <div class="text-center margin-top-2">
+    <a class="btn btn-primary" href="#" role="button"
+      onclick={{action "closeInvalidCodeDialog"}}>
+      CONFIRMAR
+    </a>
+  </div>
+{{/gcomm-dialog}}

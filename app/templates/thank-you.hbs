@@ -18,11 +18,11 @@
     </section>
     <div class="container site-section">
       <h1>Tu número asignado es:</h1>
-      <h2 class="result">{{fa-icon "phone"}} 5511223344</h2>
+      <h2 class="result">{{fa-icon "phone"}} {{model.did}}</h2>
       <div class="line-gray"></div>
       <h3>Tu código de acceso para conferencias es:</h3>
       <div class="result code">
-        {{fa-icon "lock"}} 12345
+        {{fa-icon "lock"}} {{model.conferenceCode}}
       </div>
       <br>
     </div>
