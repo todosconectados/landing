@@ -52,14 +52,16 @@ export default ApplicationController.extend({
     ;
   },
   userSavedOnSuccess (user) {
+    let phone = this.get('user.phone');
     const session = this.get('session');
     const signupUserId = user.get('id');
+    Cookies.set('phone', phone);
     session.setSignupUserId(signupUserId);
     this.transitionToRoute('activation');
   },
   userSavedOnError () {
     const baseHelper = this.get('base-helper');
-    baseHelper.serverError();
+    this.set('showDialog.invalidCode', true);
   },
   actions: {
     formOnSubmit(){
@@ -84,6 +86,9 @@ export default ApplicationController.extend({
     onCaptchaExpired(){
       this.set('recaptchaResponse', null);
       this.get('gRecaptcha').resetReCaptcha();
+    },
+    closeInvalidCodeDialog () {
+      this.set('showDialog.invalidCode', false);
     }
   }
 });

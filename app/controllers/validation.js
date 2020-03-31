@@ -53,12 +53,10 @@ export default ApplicationController.extend({
     const userData = store.normalize('user', response.user);
     const user = store.push(userData);
     const dialer = user.get('dialerObject');
-    debugger;
     session.setDialerCookies(dialer);
     this.transitionToRoute('thank-you');
   },
   userSavedOnError (e) {
-    debugger;
     this.set('showDialog.invalidCode', true);
   },
   actions: {

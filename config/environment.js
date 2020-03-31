@@ -42,6 +42,11 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline' use.typekit.net placehold.it code.ionicframework.com maxcdn.bootstrapcdn.com oss.maxcdn.com *.googleapis.com *.gstatic.com ws://localhost:3000/socket.io/ *.ucarecdn.com *.uploadcare.com *.pusherapp.com ws://ws.pusherapp.com 178.62.214.97 *.ytimg.com https://twitter-stream-embe.herokuapp.com/ wss://twitter-stream-embe.herokuapp.com/",
       'frame-src': "'self' s-static.ak.facebook.com static.ak.facebook.com www.facebook.com *.ucarecdn.com *.uploadcare.com *.pusherapp.com ws://ws.pusherapp.com 178.62.214.97 *.ytimg.com dl.dropboxusercontent.com https://twitter-stream-embe.herokuapp.com/  wss://twitter-stream-embe.herokuapp.com/ https://www.youtube.com https://www.google.com/recaptcha/",
     },
+    'ember-cli-notifications': {
+      includeFontAwesome: false,
+      autoClear: true,
+      clearDuration: 7000
+    },
   };
 
   if (environment === 'development') {

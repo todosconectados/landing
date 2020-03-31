@@ -11,6 +11,7 @@ export default Ember.Route.extend({
       // TODO: validate user status
       const store = this.get('store');
       const user = store.createRecord('phone-user');
+      user.set('phone', Cookies.get('phone'))
       return Ember.RSVP.hash({ user: user });
     } else {
       this.replaceWith('index');

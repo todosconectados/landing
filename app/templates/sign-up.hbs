@@ -62,3 +62,23 @@
     <p>Revisa tus campos e intenta nuevamente</p>
   </div>
 {{/gcomm-dialog}}
+{{#gcomm-dialog open=showDialog.invalidCode title="Registro incorrecto"}}
+  <div class="row">
+    <div class="tc-error-img">
+      <img class="img-code" src="/assets/images/error_tc.png"
+        alt="Pin inválido">
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="margin-bottom-1 text-gray">
+      Valida tu información e intenta nuevamente
+      <br>Recuerda que sólo se permite una sala de conferencias por cuenta
+    </h1>
+  </div>
+  <div class="text-center margin-top-2">
+    <a class="btn btn-primary" href="#" role="button"
+      onclick={{action "closeInvalidCodeDialog"}}>
+      CONFIRMAR
+    </a>
+  </div>
+{{/gcomm-dialog}}

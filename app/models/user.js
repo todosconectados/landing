@@ -33,7 +33,7 @@ const Validations = buildValidations({
     }),
     validator('number', {
       allowString: true,
-      integer: true,
+      integer: true
     }),
   ],
   privacyAcceptance: [
