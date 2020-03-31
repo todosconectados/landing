@@ -51,7 +51,8 @@ export default ApplicationController.extend({
       })
     ;
   },
-  userSavedOnSuccess () {
+  userSavedOnSuccess (user) {
+    debugger;
     this.transitionToRoute('activation');
   },
   userSavedOnError () {

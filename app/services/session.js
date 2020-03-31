@@ -11,11 +11,16 @@ import ENV from 'landing/config/environment';
 export default Ember.Service.extend({
   store: Ember.inject.service(),
   adapterParams: {},
+  signupUserId: null,
   /**
    * Load all cookies
    */
   loadCookies(){
-    // this.set('signupUserId', Cookie.get('signupUserId'));
+    this.set('signupUserId', Cookie.get('signupUserId'));
+  },
+  setSignupUserId(signupUserId) {
+    this.set('signupUserId', signupUserId);
+    Cookie.set('signupUserId', signupUserId);
   },
   /**
    * Parses response headers separated by CRLF and creates JSON key/value pairs
