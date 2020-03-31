@@ -40,11 +40,15 @@ const Validations = buildValidations({
   ],
   privacyAcceptance: [
     validator('presence', {
-      presence: true
+      presence: true,
+      disabled: Ember.computed.not('model.shouldValidateAcceptance')
     })
   ],
   termsAndConditionsAcceptance: [
-    validator('presence', { presence: true })
+    validator('presence', {
+      presence: true,
+      disabled: Ember.computed.not('model.shouldValidateAcceptance')
+    })
   ]
 });
 
@@ -58,6 +62,7 @@ export default DS.Model.extend(Validations,{
   phone: DS.attr('string'),
   status: DS.attr('string'),
   activationCode: DS.attr('string'),
+  shouldValidateAcceptance: DS.attr('boolean', { defaultValue: false }),
   /**
   * Virtual Attributes
   */

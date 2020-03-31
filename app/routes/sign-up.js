@@ -5,7 +5,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(){
     const store = this.get('store');
-    const user = store.createRecord('user');
-    return Ember.RSVP.hash({ user: user });
+    // legal acceptance is validated on step 1 only
+    const user = store.createRecord('user', { shouldValidateAcceptance: true });
+    return Ember.RSVP.hash({
+      user: user
+    });
   }
 });
