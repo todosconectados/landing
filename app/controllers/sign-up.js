@@ -55,12 +55,11 @@ export default ApplicationController.extend({
     let phone = this.get('user.phone');
     const session = this.get('session');
     const signupUserId = user.get('id');
-    Cookies.set('phone', phone);
+    session.set('phone', phone);
     session.setSignupUserId(signupUserId);
     this.transitionToRoute('activation');
   },
   userSavedOnError () {
-    const baseHelper = this.get('base-helper');
     this.set('showDialog.invalidCode', true);
   },
   actions: {
