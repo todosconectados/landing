@@ -1,0 +1,17 @@
+{{#base-layout}}
+<div class="view thank-you-view">
+  <div class="container text-center">
+    <div class="high-not-found">
+      <img class="img-fluid" src="/assets/images/high_not_found.png"
+      alt="No encontramos la página">
+    </div>
+    <h1 class="text-center">Oops!</h1>
+    <div class="line-title"></div>
+    <h2 class="padd-bottom-1">No encontramos la página que estás buscando</h2>
+    {{#link-to 'index' class="btn btn-primary margin-bottom-2"}}
+      {{fa-icon 'home'}}
+      Ir al inicio
+    {{/link-to}}
+  </div>
+</div>
+{{/base-layout}}
