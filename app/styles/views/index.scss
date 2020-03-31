@@ -249,15 +249,5 @@
         float: right;
       }
     }
-    .g-recaptcha{
-      text-align: right;
-      @media(max-width: $screen-sm-min){
-        float: none;
-        transform:scale(0.77);
-        -webkit-transform:scale(0.77);
-        transform-origin:0 0;
-        -webkit-transform-origin:0 0;
-      }
-    }
   }
 }

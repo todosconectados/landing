@@ -1,3 +1,44 @@
-.sign-up-view {
-  
+$p: 3.0rem;
+.signup-view {
+  @include bg-color(#F8F8F8);
+  padding-top: $p;
+  padding-bottom: $p;
+  h1{
+    font-weight: $bold;
+  }
+  h2{
+    color: $dark-gray;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 0;
+  }
+  .line-gray{
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+  }
+  $br: 0.5rem;
+  .signup-form{
+    @include bg-color($white);
+    border: 1px solid $light-gray-line;
+    border-radius: $br $br $br $br;
+    padding-top: 2.0rem;
+    &.single{
+      @media(min-width: $screen-sm-min){
+        max-width: 80.0rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    label{
+      color: $dark-gray;
+    }
+    .form-actions{
+      max-width: 26rem;
+      text-align: right;
+      float: right;
+      @media(min-width: $screen-sm-min){
+        max-width: 33rem;
+      }
+    }
+  }
 }

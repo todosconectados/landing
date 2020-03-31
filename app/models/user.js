@@ -11,7 +11,7 @@ const Validations = buildValidations({
       presence: true,
     })
   ],
-  businessName: [
+  lastNames: [
     validator('presence', {
       presence: true,
     })
@@ -38,12 +38,12 @@ const Validations = buildValidations({
       integer: true,
     }),
   ],
-  coverLetter: [
+  privacyAcceptance: [
     validator('presence', {
-      presence: true,
+      presence: true
     })
   ],
-  privacyAcceptance: [
+  termsAndConditionsAcceptance: [
     validator('presence', {
       presence: true
     })
@@ -58,26 +58,11 @@ export default DS.Model.extend(Validations,{
   lastNames: DS.attr('string'),
   email: DS.attr('string'),
   phone: DS.attr('string'),
-  status: DS.attr('number', { defaultValue: 0 }),
+  status: DS.attr('string'),
   activationCode: DS.attr('string'),
-  target: DS.attr('number'),
-  businessName: DS.attr('string'),
-  industry: DS.attr('number', { defaultValue: 0 }),
-  state: DS.attr('string'),
-
-  coverLetter: DS.attr('string'),
   /**
   * Virtual Attributes
   */
   privacyAcceptance: DS.attr('boolean'),
-  resetValues(){
-  this.setProperties({
-    name: null,
-    businessName: null,
-    email: null,
-    phone: null,
-    coverLetter: null,
-    privacyAcceptance: null
-  });
-},
+  termsAndConditionsAcceptance: DS.attr('boolean')
 });
