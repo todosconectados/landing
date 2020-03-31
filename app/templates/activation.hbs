@@ -5,10 +5,10 @@
     <div class="line-gray"></div>
     <h2>
       <strong>¡Casi estamos list@s!</strong>
-      Enviaremos un código de verificación a tu número celular para activar tu cuenta.
+      Enviaremos un código de verificación a tu número celular para activar tu
+      cuenta.
     </h2>
-    {{signup-steps
-      selectedIndex=2}}
+    {{signup-steps selectedIndex=2}}
   </div>
   <div class="container signup-form single small">
     {{#bs-form onSubmit=(action 'formOnSubmit') autocomplete="off" as |form|}}
@@ -16,7 +16,8 @@
         alt="Valida tu cuenta">
       <div class="row">
         <div class="col-sm-12 single-field">
-          {{bs-input model=user controlType="text" label="Confirma tu número celular*"
+          {{bs-input model=user controlType="text"
+            label="Confirma tu número celular*"
             placeholder="10 dígitos"
             property="phone" formIsSubmitted=formIsSubmitted}}
           {{bs-button class=submitBtnCls

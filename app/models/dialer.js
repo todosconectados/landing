@@ -12,5 +12,5 @@ export default DS.Model.extend({
   status: DS.attr('number', { defaultValue: 0 }),
   did: DS.attr('string'),
   conferenceCode: DS.attr('string'),
-  assignedAt: DS.attr('date'),
+  assignedAt: DS.attr('date')
 });

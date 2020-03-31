@@ -7,9 +7,7 @@ import { validator, buildValidations} from 'ember-cp-validations';
 
 const Validations = buildValidations({
   activationCode: [
-    validator('presence', {
-      presence: true,
-    })
+    validator('presence', { presence: true })
   ]
 });
 
