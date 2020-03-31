@@ -52,6 +52,7 @@ export default ApplicationController.extend({
     ;
   },
   userSavedOnSuccess (user) {
+    const session = this.get('session');
     debugger;
     this.transitionToRoute('activation');
   },
