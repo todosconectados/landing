@@ -25,17 +25,6 @@ const Validations = buildValidations({
       allowNonTld: true
     })
   ],
-  phone: [
-    validator('presence', { presence: true }),
-    validator('length', {
-      is: 10,
-      message: 'Escribe tu número en 10 dígitos',
-    }),
-    validator('number', {
-      allowString: true,
-      integer: true
-    }),
-  ],
   privacyAcceptance: [
     validator('presence', {
       presence: true,
@@ -57,7 +46,6 @@ export default DS.Model.extend(Validations,{
   name: DS.attr('string'),
   lastNames: DS.attr('string'),
   email: DS.attr('string'),
-  phone: DS.attr('string'),
   status: DS.attr('string'),
   activationCode: DS.attr('string'),
   shouldValidateAcceptance: DS.attr('boolean', { defaultValue: false }),

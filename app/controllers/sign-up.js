@@ -52,10 +52,8 @@ export default ApplicationController.extend({
     ;
   },
   userSavedOnSuccess (user) {
-    let phone = this.get('user.phone');
     const session = this.get('session');
     const signupUserId = user.get('id');
-    session.setPhone(phone);
     session.setSignupUserId(signupUserId);
     this.transitionToRoute('activation');
   },
