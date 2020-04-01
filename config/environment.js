@@ -72,6 +72,10 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.rootURL = ENV.APP.LANDING_URL;
+    // track ga events in production
+    ENV.googleAnalytics = {
+      webPropertyId: process.env.GA_WEB_PROPERTY_ID
+    };
   }
 
   return ENV;
