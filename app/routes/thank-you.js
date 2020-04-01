@@ -10,7 +10,6 @@ export default Ember.Route.extend({
     const conferenceCode = session.get('conferenceCode');
     if (did && conferenceCode) {
       // TODO: validate user status
-      session.clearCookies();
       const store = this.get('store');
       const dialer = store.createRecord('dialer', {
         did: did,
@@ -20,5 +19,9 @@ export default Ember.Route.extend({
     } else {
       this.replaceWith('index');
     }
+  },
+  afterModel(){
+    const session = this.get('session');
+    session.clearCookies();
   }
 });
