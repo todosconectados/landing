@@ -1,8 +1,9 @@
 /* eslint-env node */
 'use strict';
 import Ember from 'ember';
+import Scroll from '../mixins/scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(Scroll, {
   model(){
     const session = this.get('session');
     session.loadCookies();

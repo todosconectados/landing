@@ -23,7 +23,8 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       API_URL: process.env.API_URL,
-      YOUTUBE_FEATURED_VIDEO_ID: process.env.YOUTUBE_FEATURED_VIDEO_ID
+      YOUTUBE_FEATURED_VIDEO_ID: process.env.YOUTUBE_FEATURED_VIDEO_ID,
+      LANDING_URL: process.env.LANDING_URL
     },
     i18n: {
       defaultLocale: 'es',
@@ -70,6 +71,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.rootURL = ENV.APP.LANDING_URL;
   }
 
   return ENV;

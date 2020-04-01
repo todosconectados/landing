@@ -19,5 +19,9 @@ export default Ember.Route.extend({
     } else {
       this.replaceWith('index');
     }
+  },
+  afterModel(){
+    const session = this.get('session');
+    session.clearCookies();
   }
 });
