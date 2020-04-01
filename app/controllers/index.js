@@ -5,6 +5,7 @@ import ENV from 'landing/config/environment';
 import Ember from 'ember';
 
 export default ApplicationController.extend({
+  scroller: Ember.inject.service(),
   youtubeId: ENV.APP.YOUTUBE_FEATURED_VIDEO_ID,
   lead: Ember.computed.alias('model.lead'),
   showDialog: {
@@ -34,6 +35,25 @@ export default ApplicationController.extend({
     if(!formIsValid) res.push('disabled');
     return res.join(' ');
   }),
+  initializeHashObserver(){
+    let _window = Ember.$(window);
+    _window.on('hashchange', this.windowHashObserver.bind(this));
+    this.windowHashObserver(null, true);
+  },
+  windowHashObserver(eventArgs, firstTimeRun){
+    let windowHash = window.location.hash;
+    if(Ember.isEmpty(firstTimeRun)) firstTimeRun = false;
+    if(Ember.isEmpty(windowHash)) return;
+    let selectorScrollTarget = `[data-scroll-to="${windowHash}"]`,
+      scrollTarget = Ember.$(selectorScrollTarget)
+    ;
+    if(scrollTarget.length == 0) return;
+    let scroller = this.get('scroller'),
+      scrollOptions = { offset: -60 }
+    ;
+    if(firstTimeRun) scrollOptions['duration'] = 0;
+    scroller.scrollVertical(scrollTarget, scrollOptions);
+  },
   doRequest(){
     const baseHelper = this.get('base-helper');
     baseHelper.loading();
