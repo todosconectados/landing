@@ -14,6 +14,7 @@ export default Ember.Service.extend({
   signupUserId: null,
   did: null,
   conferenceCode: null,
+  phone: null,
   /**
    * Load all cookies
    */
@@ -21,12 +22,14 @@ export default Ember.Service.extend({
     this.set('signupUserId', Cookie.get('signupUserId'));
     this.set('did', Cookie.get('did'));
     this.set('conferenceCode', Cookie.get('conferenceCode'));
+    this.set('phone', Cookie.get('phone'));
   },
   /**
    * Clear all saved cookies
    */
   clearCookies(){
     Cookie.remove('signupUserId');
+    Cookie.remove('phone');
     this.clearDialerCookies();
   },
   clearDialerCookies() {
@@ -36,6 +39,10 @@ export default Ember.Service.extend({
   setSignupUserId(signupUserId) {
     this.set('signupUserId', signupUserId);
     Cookie.set('signupUserId', signupUserId);
+  },
+  setPhone(phone){
+    this.set('phone', phone);
+    Cookie.set('phone', phone);
   },
   setDialerCookies(dialer) {
     const did = dialer.get('did');
