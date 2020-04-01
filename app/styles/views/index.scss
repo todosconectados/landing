@@ -63,7 +63,6 @@
       }
       .btn-wrapper{
         margin-top: 0;
-        font-size: 1rem;
         padding-left: $p;
         padding-right: 0;
         font-weight: $semi-bold;
@@ -77,6 +76,12 @@
         }
         @media(min-width: $screen-sm-min){
           margin-bottom: 0;
+        }
+        a{
+          font-size: 1.2rem;
+          @media(min-width: $screen-sm-min){
+            font-size: 1.4rem;
+          }
         }
       }
       .btn{
