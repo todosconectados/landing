@@ -67,5 +67,16 @@
   .box-social{
     text-align: center;
     margin-top: 3rem;
+    h4{
+      text-align: center;
+      color: $dark-gray;
+      font-weight: $bold;
+      .heart{
+        color: #fc121e;
+      }
+    }
+    h5{
+      color: $brand-primary;
+    }
   }
 }

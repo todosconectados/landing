@@ -24,7 +24,12 @@
       <div class="result code">
         {{fa-icon "lock"}} {{model.conferenceCode}}
       </div>
+      <div class="line-gray"></div>
       <div class="box-social">
+        <h4>
+          Comparte el <span class="heart">{{fa-icon "heart"}}</span>
+        </h4>
+        <h5>Comparte la iniciativa en redes sociales para ayuar a otros</h5>
         {{#fb-share-button url=landingUrl text=shareTitle}}Compartir{{/fb-share-button}}
         {{#twitter-share-button url=landingUrl text=shareTitle }}Tweet{{/twitter-share-button}}
         {{#linkedin-share-button url=landingUrl text=shareTitle}}Compartir{{/linkedin-share-button}}
