@@ -55,7 +55,7 @@ export default ApplicationController.extend({
     let phone = this.get('user.phone');
     const session = this.get('session');
     const signupUserId = user.get('id');
-    session.set('phone', phone);
+    session.setPhone(phone);
     session.setSignupUserId(signupUserId);
     this.transitionToRoute('activation');
   },

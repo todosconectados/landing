@@ -37,6 +37,10 @@ export default Ember.Service.extend({
     this.set('signupUserId', signupUserId);
     Cookie.set('signupUserId', signupUserId);
   },
+  setPhone(phone){
+    this.set('phone', phone);
+    Cookie.set('phone', phone);
+  },
   setDialerCookies(dialer) {
     const did = dialer.get('did');
     const conferenceCode = dialer.get('conferenceCode');
