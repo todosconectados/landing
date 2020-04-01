@@ -7,11 +7,13 @@ export default Ember.Route.extend({
     const session = this.get('session');
     session.loadCookies();
     const signupUserId = session.get('signupUserId');
+    const phone = session.get('phone');
     if (signupUserId) {
       // TODO: validate user status
       const store = this.get('store');
-      const user = store.createRecord('phone-user');
-      user.set('phone', session.get('phone'))
+      const user = store.createRecord('phone-user', {
+        phone: phone
+      });
       return Ember.RSVP.hash({ user: user });
     } else {
       this.replaceWith('index');
