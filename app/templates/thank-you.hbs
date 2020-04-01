@@ -7,7 +7,7 @@
       </div>
       <div class="col-sm-7 highlight">
         <h1>
-        ¡Tu numéro telefónico esta <strong>listo!</strong>
+        ¡Tu número telefónico está <strong>listo!</strong>
         </h1>
         <h2>
           Ya puedes usarlo para tener conferencias ilimitadas con tu equipo.
@@ -23,6 +23,14 @@
       <h3>Tu código de acceso para conferencias es:</h3>
       <div class="result code">
         {{fa-icon "lock"}} {{model.conferenceCode}}
+      </div>
+      <div class="box-social">
+        <div class="">
+          {{#fb-share-button url="http://example.com" quote=conferenceCodeText}}Compartir{{/fb-share-button}}
+          {{#twitter-share-button title="Código de acceso" via=conferenceCodeText url="http://example.com" hashtags="#TodosConectados" }}Tweet{{/twitter-share-button}}
+          {{#linkedin-share-button title="Código de acceso" text=conferenceCodeText}}Compartir{{/linkedin-share-button}}
+          {{#gplus-share-button url="http://example.com"}}Share{{/gplus-share-button}}
+        </div>
       </div>
       <br>
     </div>
