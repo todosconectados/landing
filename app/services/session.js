@@ -21,12 +21,14 @@ export default Ember.Service.extend({
     this.set('signupUserId', Cookie.get('signupUserId'));
     this.set('did', Cookie.get('did'));
     this.set('conferenceCode', Cookie.get('conferenceCode'));
+    this.set('phone', Cookie.set('phone', phone));
   },
   /**
    * Clear all saved cookies
    */
   clearCookies(){
     Cookie.remove('signupUserId');
+    Cookie.remove('phone');
     this.clearDialerCookies();
   },
   clearDialerCookies() {
