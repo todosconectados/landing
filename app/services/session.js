@@ -14,6 +14,7 @@ export default Ember.Service.extend({
   signupUserId: null,
   did: null,
   conferenceCode: null,
+  phone: null,
   /**
    * Load all cookies
    */
@@ -21,7 +22,7 @@ export default Ember.Service.extend({
     this.set('signupUserId', Cookie.get('signupUserId'));
     this.set('did', Cookie.get('did'));
     this.set('conferenceCode', Cookie.get('conferenceCode'));
-    this.set('phone', Cookie.set('phone', phone));
+    this.set('phone', Cookie.get('phone'));
   },
   /**
    * Clear all saved cookies
