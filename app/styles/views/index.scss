@@ -1,13 +1,6 @@
 .index-view{
   .slider{
     @include bg-color($brand-primary);
-    background-image:
-    url('/assets/images/home-bg.png');
-    background-size: cover;
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
     .line-slider{
       width: 40%;
       height: 1px;
@@ -231,6 +224,11 @@
       padding-top: 3.0rem;
       font-size: 1.3rem;
       color: $dark-gray;
+      @media(min-width: $screen-sm-min){
+        max-width: 60.0rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     .form-actions{
       text-align: right;
@@ -238,15 +236,10 @@
       margin-left: auto;
       margin-right: 0;
       margin-bottom: 0;
-    }
-    .g-recaptcha{
-      text-align: right;
-      @media(max-width: $screen-sm-min){
-        float: none;
-        transform:scale(0.77);
-        -webkit-transform:scale(0.77);
-        transform-origin:0 0;
-        -webkit-transform-origin:0 0;
+      display: block;
+      @media(min-width: $screen-sm-min){
+        max-width: 35.0rem;
+        float: right;
       }
     }
   }

@@ -19,11 +19,15 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      API_URL: process.env.API_URL
+      API_URL: process.env.API_URL,
+      YOUTUBE_FEATURED_VIDEO_ID: process.env.YOUTUBE_FEATURED_VIDEO_ID,
+      LANDING_URL: process.env.LANDING_URL
+    },
+    i18n: {
+      defaultLocale: 'es',
     },
     // g-recaptcha
     gReCaptcha: {
@@ -38,6 +42,11 @@ module.exports = function(environment) {
       'img-src': "'self' data: www.facebook.com p.typekit.net placehold.it code.ionicframework.com maxcdn.bootstrapcdn.com oss.maxcdn.com *.googleapis.com *.gstatic.com ws://localhost:3000/socket.io/ *.twimg.com *.ucarecdn.com *.uploadcare.com *.pusherapp.com ws://ws.pusherapp.com 178.62.214.97 *.ytimg.com https://twitter-stream-embe.herokuapp.com/ wss://twitter-stream-embe.herokuapp.com/",
       'style-src': "'self' 'unsafe-inline' use.typekit.net placehold.it code.ionicframework.com maxcdn.bootstrapcdn.com oss.maxcdn.com *.googleapis.com *.gstatic.com ws://localhost:3000/socket.io/ *.ucarecdn.com *.uploadcare.com *.pusherapp.com ws://ws.pusherapp.com 178.62.214.97 *.ytimg.com https://twitter-stream-embe.herokuapp.com/ wss://twitter-stream-embe.herokuapp.com/",
       'frame-src': "'self' s-static.ak.facebook.com static.ak.facebook.com www.facebook.com *.ucarecdn.com *.uploadcare.com *.pusherapp.com ws://ws.pusherapp.com 178.62.214.97 *.ytimg.com dl.dropboxusercontent.com https://twitter-stream-embe.herokuapp.com/  wss://twitter-stream-embe.herokuapp.com/ https://www.youtube.com https://www.google.com/recaptcha/",
+    },
+    'ember-cli-notifications': {
+      includeFontAwesome: false,
+      autoClear: true,
+      clearDuration: 7000
     },
   };
 
@@ -62,6 +71,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.rootURL = ENV.APP.LANDING_URL;
   }
 
   return ENV;

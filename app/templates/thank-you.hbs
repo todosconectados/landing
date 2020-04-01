@@ -1,26 +1,35 @@
 {{#base-layout}}
-  <section class="slider" style="background-color:#f5f5f5">
-    <section class="container">
-      <div class="col-sm-5 highlight-image">
+  <section class="thank-you container-fluid">
+    <section class="slider container-fluid">
+      <div class="col-sm-5 highlight-image container">
         <img class="img-responsive" src="/assets/images/gordo_tc.png"
         alt="Gracias">
       </div>
       <div class="col-sm-7 highlight">
-        <h1 style="color:#666666">
-        ¡Tu numéro telefónico esta <b style="color:#666666">listo!</b>
+        <h1>
+        ¡Tu número telefónico está <strong>listo!</strong>
         </h1>
-        <p style="color:#666666">
-        <br> Ya puedes usarlo para tener conferencias ilimitadas con tu equipo.
-        </p>
+        <h2>
+          Ya puedes usarlo para tener conferencias ilimitadas con tu equipo.
+        </h2>
       </div>
       <div class="col-sm-5 highlight-image visible-xs">
       </div>
     </section>
+    <div class="container site-section">
+      <h1>Tu número asignado es:</h1>
+      <h2 class="result">{{fa-icon "phone"}} {{model.did}}</h2>
+      <div class="line-gray"></div>
+      <h3>Tu código de acceso para conferencias es:</h3>
+      <div class="result code">
+        {{fa-icon "lock"}} {{model.conferenceCode}}
+      </div>
+      <div class="box-social">
+        {{#fb-share-button url=landingUrl text=shareTitle}}Compartir{{/fb-share-button}}
+        {{#twitter-share-button url=landingUrl text=shareTitle }}Tweet{{/twitter-share-button}}
+        {{#linkedin-share-button url=landingUrl text=shareTitle}}Compartir{{/linkedin-share-button}}
+      </div>
+      <br>
+    </div>
   </section>
-  <div class="container">
-    <h1><br> {{fa-icon "phone"}} Tu número asignado es:</h1>
-    <div class="line-gray"></div>
-    <h1 style="color:#666666"><br>Tu código de <b style="color:#666666">acceso</b> para conferencias es:</h1>
-    <br>
-  </div>
 {{/base-layout}}

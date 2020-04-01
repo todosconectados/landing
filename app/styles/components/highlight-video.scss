@@ -1,0 +1,42 @@
+.highlight-video{
+  @include bg-color($black);
+  position: fixed;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  &.visible{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9998;
+  }
+  .video{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    iframe{
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  $s: 4.0rem;
+  .btn-close{
+    position: absolute;
+    color: $brand-primary;
+    width: $s;
+    height: $s;
+    right: 1.0rem;
+    top: 1.0rem;
+    font-size: $s;
+    z-index: 9999;
+  }
+}

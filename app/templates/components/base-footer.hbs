@@ -1,12 +1,33 @@
 <div class="col-sm-4 footer-column">
+  <h1>
+    #TodosConectados
+  </h1>
+  {{#link-to "privacy-policy" class="footer-link"}}
+    {{fa-icon "file-alt"}}
+    Política de Privacidad
+  {{/link-to}}
+  {{#link-to "terms-and-conditions" class="footer-link"}}
+    {{fa-icon "file-alt"}}
+    Términos y Condiciones
+  {{/link-to}}
+</div>
+<div class="col-sm-4 footer-column">
+  <h1>
+    {{fa-icon 'address-book'}}
+    Contacto
+  </h1>
+  <div class="address-column">
+    <a class="social" href="https://github.com/todosconectados/api" target="_blank">
+      {{fa-icon "github" prefix="fab"}}
+    </a>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="col-sm-4 footer-column">
   <p>
     Copyright © 2020 <a href="http://todosconectados.org" target="_blank">Todos Conectados</a>
   </p>
   <p>
     Hecho con {{fa-icon 'heart'}} en México
   </p>
-</div>
-<div class="col-sm-4 footer-column">
-</div>
-<div class="col-sm-4 footer-column">
 </div>

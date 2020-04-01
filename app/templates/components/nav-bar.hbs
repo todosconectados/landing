@@ -17,24 +17,28 @@
       {{#bs-collapse id="navbar" collapsed=navBarIsCollapsed class="collapse navbar-collapse navbar-right"}}
         <ul class="nav navbar-nav navbar-left">
           <li>
-            <a href="#how-it-works">
-            ¿Cómo funciona?
+            <!-- {{-scroll-to href='#how-it-works' offset=-60}} -->
+            <a href="./#how-it-works">
+              ¿Cómo funciona?
             </a>
           </li>
           <li>
-            <a href="#work-from-home">
+            <!-- {{-scroll-to href='./#work-from-home' offset=-60}} -->
+            <a href="./#work-from-home">
               Trabaja desde casa
             </a>
           </li>
           <li>
-            <a href="#about">
+            <!-- {{-scroll-to href='./#about' offset=-60}} -->
+            <a href="./#about">
               Nuestro proyecto
             </a>
           </li>
           <li>
-            <a href="#contact">
+            <!-- {{-scroll-to href='./#contact' offset=-60}} -->
+            <a href="./#contact">
               Contacto
-              </a>
+            </a>
           </li>
           <li>
             {{#link-to "sign-up" class="btn btn-primary"}}

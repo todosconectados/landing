@@ -17,14 +17,14 @@
         </h2>
         <div id="how" class="btn-container row">
           <div class="btn-wrapper col-xs-6">
-            <a href="#" class="btn btn-white btn-block">
-              {{fa-icon 'question-circle'}} ¿CÓMO FUNCIONA?
+            <a href="#" class="btn btn-white btn-block" onclick={{action 'showYoutubeVideoClicked'}}>
+              {{fa-icon 'play-circle'}} ¿CÓMO FUNCIONA?
             </a>
           </div>
           <div class="btn-wrapper col-xs-6">
-            <a href="#" class="btn btn-white btn-block">
+            {{#link-to "sign-up" class="btn btn-white btn-block"}}
               {{fa-icon 'plus-circle'}} QUIERO MI NÚMERO
-            </a>
+            {{/link-to}}
           </div>
         </div>
       </div>
@@ -57,14 +57,14 @@
           <img class="img-responsive" src="/assets/images/share_tc.png" alt="Compártelo">
           <h2>Compártelo</h2>
           <p class="text-center">
-            Envía el número y código de acceso  a tus compañer@s de trabajo y podrán tener
-            <strong>conferencias ilimitadas.</strong>
+            Envía el número y código de acceso hasta <strong>5 compañer@s</strong>
+             y podrán tener <strong>conferencias ilimitadas.</strong>
           </p>
         </div>
       </div>
     </div>
   </section>
-  <section id="work-from-home"  class="container-fluid site-section primary">
+  <section id="work-from-home" class="container-fluid site-section primary">
     <div class="container">
       <h1>Trabaja desde <strong>casa</strong></h1>
       <div class="line-title"></div>
@@ -170,26 +170,26 @@
       <div class="fieldset">
         <div class="row">
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="text" label="Nombre Completo*"
-            placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
+            {{bs-input model=lead controlType="text" label="Nombre Completo*"
+              placeholder="Martha" property="name" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="text" label="Empresa/Organización*"
-            placeholder="López" property="businessName" formIsSubmitted=formIsSubmitted}}
+            {{bs-input model=lead controlType="text" label="Empresa/Organización*"
+              placeholder="López" property="companyName" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="clearfix"></div>
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="email" label="Correo electrónico*"
-            placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
+            {{bs-input model=lead controlType="email" label="Correo electrónico*"
+              placeholder="juan@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-6 form-group">
-            {{bs-input model=user controlType="telephone" label="Teléfono*"
-            placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
+            {{bs-input model=lead controlType="telephone" label="Teléfono*"
+              placeholder="5533001122" property="phone" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="clearfix"></div>
           <div class="col-sm-12 form-group">
-            {{bs-textarea model=user controlType="text" label="Comentarios*"
-            property="coverLetter" formIsSubmitted=formIsSubmitted}}
+            {{bs-textarea model=lead controlType="text" label="Comentarios*"
+              property="comments" formIsSubmitted=formIsSubmitted}}
           </div>
           <div class="col-sm-12 form-actions">
             {{g-recaptcha onSuccess=(action "onCaptchaResolved")
@@ -197,15 +197,30 @@
               onExpired=(action 'onCaptchaExpired')
               ref=(mut gRecaptcha)
             }}
-            {{#bs-checkbox model=user property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
-              <!-- {{action 'privacyPolicyClicked'}} -->
-              Acepto el <a href="#" onclick="#">Aviso de Privacidad</a>
+            {{#bs-checkbox model=lead property="privacyAcceptance" formIsSubmitted=formIsSubmitted}}
+              Acepto el <a href="#" onclick={{action "privacyPolicyClicked"}}>Aviso de Privacidad</a>
             {{/bs-checkbox}}
-            {{bs-button class=submitBtnCls defaultText="Enviar" type="primary" buttonType="submit"}}
+            {{bs-button class=submitBtnCls
+              defaultText="Enviar" type="primary" buttonType="submit"}}
           </div>
+          <div class="clearfix"></div>
         </div>
       </div>
     {{/bs-form}}
   </section>
 </div>
 {{/base-layout}}
+{{#gcomm-dialog open=showDialog.privacyPolicy title="Aviso de Privacidad"}}
+  {{privacy-policy}}
+{{/gcomm-dialog}}
+{{#ember-wormhole to="destination"}}
+  {{highlight-video youtubeId=youtubeId visible=showDialog.youtube}}
+{{/ember-wormhole}}
+{{#gcomm-dialog open=showDialog.leadSuccess title="Gracias por pensar en TodosConectados"}}
+  <p class="strong text-center">
+    Tus datos han sido guardados.
+  </p>
+  <p class="text-center">
+    Nos pondremos en contacto contigo a la brevedad.
+  </p>
+{{/gcomm-dialog}}

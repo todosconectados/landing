@@ -1,3 +1,71 @@
-.thank-you-view {
-  
+.thank-you{
+  color: $white;
+  .slider{
+    @include bg-color($brand-primary);
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-bottom: 2.0rem;
+    text-align: center;
+    @media(min-width: $screen-sm-min){
+      padding-bottom: 1.0rem;
+      text-align: left;
+      h1{
+        text-align: left;
+      }
+    }
+    h1, h2{
+      color: $white;
+    }
+    h2{
+      font-size: 1.5rem;
+    }
+    .highlight{
+      @media(min-width: $screen-sm-min){
+        padding-top: 4.3rem;
+      }
+    }
+    .highlight-image{
+      .img-responsive{
+        margin-left: auto;
+        margin-right: auto;
+        @media(min-width: $screen-iphone6-min){
+          max-width: 30.0rem;
+        }
+        @media(min-width: $screen-sm-min){
+          max-width: 25.0rem;
+        }
+      }
+    }
+  }
+  .site-section{
+    h1{
+      font-size: 2.0rem;
+      font-weight: $bold;
+    }
+    .result{
+      margin-top: 1.0rem;
+      font-weight: $bold;
+      font-size: 1.6rem;
+      &.code{
+        padding-top: 1.0rem;
+        padding-bottom: 1.0rem;
+        border: 1px solid $light-gray-line;
+        max-width: 12.0rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        @include bg-color($bg-light-gray);
+        text-align: center;
+        color: $dark-gray;
+      }
+    }
+    h3{
+      font-weight: $bold;
+      font-size: 1.4rem;
+    }
+  }
+  .box-social{
+    text-align: center;
+    margin-top: 3rem;
+  }
 }
