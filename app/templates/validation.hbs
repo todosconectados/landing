@@ -15,8 +15,10 @@
           alt="Valida tu cuenta">
         <div class="row">
           <div class="col-sm-12 single-field">
-            {{bs-input model=user controlType="text" label="Ingresa el código de validación*"
-              placeholder="4 dígitos" property="activationCode" formIsSubmitted=formIsSubmitted}}
+            {{bs-input model=user controlType="text" label="Ingresa el código de validación*" placeholder="4 dígitos" property="activationCode" formIsSubmitted=formIsSubmitted}}
+            <div class="alert alert-warning" role="alert">
+              {{fa-icon "exclamation-triangle"}} No cierres esta página, el SMS puede tomar hasta <strong>5 minutos en llegar</strong>
+            </div>
             {{bs-button class=submitBtnCls defaultText="Validar código" type="primary" buttonType="submit"}}
           </div>
         </div>
