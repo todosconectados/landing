@@ -20,27 +20,13 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
-    ENV.s3 = {
-      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html,pdf,xml}',
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      bucket: process.env.AWS_BUCKET,
-      region: process.env.AWS_REGION
-    };
-    ENV['s3-index'] = {
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      bucket: process.env.AWS_BUCKET,
-      region: process.env.AWS_REGION,
-      allowOverwrite: true
-    };
-    ENV.cloudfront = {
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      distribution: process.env.AWS_DISTRIBUTION_ID,
-      // invalidation strategy for cloudfront
-      objectPaths: ['/*', '/assets/*', '/index.html']
-    };
+    ENV.scp = {
+      nodes: [{
+        username: process.env.SCP_DEPLOY_USERNAME,
+        host: process.env.SCP_DEPLOY_HOST,
+        path: process.env.SCP_DEPLOY_PATH,
+      }],
+    }
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
