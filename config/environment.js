@@ -1,7 +1,8 @@
 /* eslint-env node */
 'use strict';
-
-require('dotenv').config();
+require('dotenv-safe').config({
+  example: '.env.sample'
+});
 
 module.exports = function(environment) {
   let ENV = {

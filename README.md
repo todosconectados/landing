@@ -33,14 +33,14 @@ Genera un nuevo archivo llamado `.env` en la carpeta principal del proyecto. Lle
 
 Esta aplicación utiliza `eslint` para estilo de código js. Para validar tu aplicación, ejecuta:
 
-- `yarn run eslint .`
+- `npm run eslint .`
 
 ## Deploy
 
 Esta aplicación utiliza los plugins de `ember-cli-deploy-s3` y `ember-cli-deploy-cloudfront` para deploy en stage y producción. Asegúrate que las configuraciones correspondientes se encuentren en tu archivo `.env` antes de ejecutar un deploy. Posteriormente, ejecuta:
 
 ```
-ember deploy production --activate
+npm run deploy:production
 ```
 
 ## Acerca del Proyecto
