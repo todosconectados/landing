@@ -24,10 +24,6 @@
              {{bs-input model=user controlType="text" label="Correo Electrónico*"
                placeholder="martha@ejemplo.com" property="email" formIsSubmitted=formIsSubmitted}}
            </div>
-           <div class="col-sm-6">
-             {{bs-input model=user controlType="text" label="Celular*"
-               placeholder="10 dígitos" property="phone" formIsSubmitted=formIsSubmitted}}
-           </div>
            <div class="clearfix"></div>
            <div class="col-xs-12 form-actions">
              {{g-recaptcha onSuccess=(action "onCaptchaResolved")
