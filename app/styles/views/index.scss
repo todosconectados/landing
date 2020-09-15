@@ -14,7 +14,7 @@
     $p: 4.0rem;
     .container{
       padding-top: $p;
-      padding-bottom: $p;
+      padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
       @media(min-width: $screen-sm-min){
@@ -51,7 +51,7 @@
       margin-bottom: 1.9rem;
       @media(min-width: $screen-sm-min){
         text-align: left;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
     }
     .btn-container{
