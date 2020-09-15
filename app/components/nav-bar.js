@@ -14,19 +14,5 @@ export default Ember.Component.extend({
       homeUrl = router.generate('index')
     ;
     return homeUrl;
-  }),
-  actions: {
-    toggleCollapsed(){
-      this.toggleProperty('navBarIsCollapsed');
-    },
-    navBarSelected(target, e){
-      let onNavBarSelected = this.get('onNavBarSelected');
-      if(onNavBarSelected){
-        e.preventDefault();
-        onNavBarSelected(target, e);
-      }
-      window.location.hash = `#${target}`;
-      this.set('navBarIsCollapsed', true);
-    }
-  }
+  })
 });

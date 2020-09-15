@@ -14,12 +14,14 @@
     $p: 4.0rem;
     .container{
       padding-top: $p;
-      padding-bottom: $p;
+      padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
       @media(min-width: $screen-sm-min){
-        padding-top: 3.0rem;
-        padding-bottom: 2.0rem;
+        padding-top: 5.0rem;
+        padding-bottom: 0rem;
+        display: flex;
+        justify-content: center;
       }
     }
     .highlight{
@@ -36,6 +38,7 @@
       }
       @media(min-width: $screen-sm-min){
         font-size: 3.0rem;
+        padding-top: 5rem;
         text-align: left;
         max-width: none;
       }
@@ -48,7 +51,7 @@
       margin-bottom: 1.9rem;
       @media(min-width: $screen-sm-min){
         text-align: left;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
     }
     .btn-container{
@@ -209,14 +212,14 @@
       font-weight: $bold;
       padding-bottom: 1.5rem;
       @media(min-width: $screen-sm-min){
-        font-size: 2.0rem;
+        font-size: 3.0rem;
       }
     }
     h2{
       padding-bottom: 2.0rem;
       font-size: 1.6rem;
       @media(min-width: $screen-sm-min){
-        font-size: 1.4rem;
+        font-size: 1.8rem;
       }
     }
     .press{
@@ -234,7 +237,7 @@
         margin-left: auto;
         margin-right: auto;
         @media(min-width: $screen-sm-min){
-          max-width: 10.0rem;
+          max-width: 14.0rem;
         }
       }
     }
